@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="shortcut icon" href="./images/favicon (4).ico" type="image/x-icon">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_2223931_1jpl3lf7yqc.css">
+	<link rel="stylesheet" href="./css/swiper.min.css" />
+	<link rel="stylesheet" href="./css/animate.min.css" />
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		@font-face {
+			font-family: myFont;
+			src: url(./fonts/fontawesome-webfont.eot),
+				url(./fonts/fontawesome-webfont.ttf),
+				url(./fonts/fontawesome-webfont.svg),
+				url(./fonts/fontawesome-webfont.woff);
+		}
+
+		body {
+			font-family: myFont;
+		}
+
+		header {
+			/*w100p*/
+			width: 100%;
+			/*background-color: #ccc;*/
+		}
+
+		.header-top {
+			width: 100%;
+			height: 51px;
+			background-color: #3b526b;
+		}
+
+		.header-top .inner {
+			height: 51px;
+		}
+
+		.inner {
+			width: 1140px;
+			/* background-color: teal; */
+			/*margin: 0 auto;*/
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.top-info {
+			width: 645px;
+			height: 51px;
+			/* background-color: green; */
+			float: left;
+		}
+
+		.top-info p {
+			line-height: 51px;
+			float: left;
+			font-size: 12px;
+			color: #fff;
+			/*右间距*/
+			margin-right: 10px;
+		}
+
+		.top-info p i {
+			font-size: 18px;
+			color: #18ba60;
+		}
+
+		.header-top a {
+			width: 131px;
+			height: 51px;
+			display: block;
+			background-color: #18ba60;
+			float: right;
+			color: #fff;
+			font-size: 14px;
+			line-height: 51px;
+			text-align: center;
+			text-decoration: none;
+		}
+
+		.header-mid {
+			width: 100%;
+			background-color: #fff;
+		}
+
+		.header-mid .inner {
+			/* height: 100px; */
+			overflow: hidden;
+		}
+
+		.header-mid .logo {
+			float: left;
+			margin-top: 24px;
+			width: 168px;
+			margin-bottom: 20px;
+		}
+
+		.header-mid .logo img {
+			/* width: 168px; */
+			width: 100%;
+		}
+
+		.header-mid nav {
+			float: right;
+			width: 747px;
+			/* height: 100px; */
+			/* background-color: #ccc; */
+		}
+
+		.header-mid nav ul {
+			list-style: none;
+		}
+
+		.header-mid nav ul li {
+			float: left;
+		}
+
+		.header-mid nav ul li a {
+			text-decoration: none;
+			color: #000;
+			font-size: 12px;
+			display: block;
+			padding-left: 20px;
+			padding-right: 20px;
+			height: 50px;
+			line-height: 50px;
+			margin-top: 25px;
+			/* border: 1px solid red; */
+		}
+
+		.header-mid nav ul li a:hover {
+			color: #18ba60;
+			/* font-size: 20px; */
+		}
+
+		.header-mid nav ul li .first {
+			color: #18ba60;
+		}
+
+		.header-mid nav ul li a i {
+			font-size: 12px;
+			/* display: block;
+		transform: scale(0.7);
+		float: right; */
+		}
+
+		.banner {
+			width: 100%;
+			height: 506px;
+			/* background-color: #000; */
+			/* background-image: url(./images/banner.jpg);
+			background-size: cover;
+			background-repeat: no-repeat; */
+			/* background-position: center center; */
+		}
+
+		.banner .swiper-container {
+			width: 100%;
+			height: 506px;
+		}
+
+		.banner .banner-one {
+			background-image: url(./images/slide-2.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		.banner .banner-two {
+			background-image: url(./images/slide-3.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		.banner .banner-three {
+			background-image: url(./images/slide-4.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		.banner .banner-four {
+			background-image: url(./images/banner.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		.banner .swiper-slide {
+			box-sizing: border-box;
+			/* padding-right: 300px; */
+			padding-top: 100px;
+			/* padding-left: 40px; */
+			box-sizing: border-box;
+		}
+
+		.swiper-button-prev:after,
+		.swiper-button-next:after {
+			font-size: 26px;
+			color: #fff;
+			font-weight: bold;
+		}
+
+		.banner .swiper-pagination-progressbar-fill {
+			background-color: rgba(255, 255, 255, 0.5);
+		}
+
+		.banner .swiper-slide h2 {
+			font-size: 50px;
+			color: #fff;
+			font-weight: normal;
+			line-height: 150%;
+		}
+
+		.banner .swiper-slide p {
+			font-size: 24px;
+			color: #fff;
+			line-height: 150%;
+			margin-top: 20px;
+		}
+
+		.banner .swiper-slide a {
+			display: block;
+			width: 125px;
+			height: 45px;
+			border-radius: 5px;
+			background-color: #18ba60;
+			line-height: 45px;
+			text-align: center;
+			text-decoration: none;
+			color: #fff;
+			font-size: 14px;
+			font-weight: bold;
+			margin-top: 38px;
+		}
+
+		.banner .swiper-slide a:hover {
+			background-color: #3b526b;
+		}
+
+		.main {
+			width: 100%;
+			/* height: 4073px; */
+
+		}
+
+		.first-content {
+			width: 100%;
+			/* height: 673px; */
+			background-color: #fff;
+		}
+
+		.first-content .inner {
+			/* height: 673px; */
+
+		}
+
+		.first-content-head {
+			width: 100%;
+			/* height:282px; */
+
+			text-align: center;
+			overflow: hidden;
+			margin-bottom: 50px;
+		}
+
+		.first-content-head h3 {
+			font-size: 34px;
+			font-weight: normal;
+			margin-top: 108px;
+			margin-bottom: 22px;
+		}
+
+		.first-content-head p {
+			font-size: 16px;
+			line-height: 30px;
+			color: #b5bdc5;
+		}
+
+		.first-content .first-content-foot {
+			width: 100%;
+			/* height: 391px; */
+			overflow: hidden;
+			margin-bottom: 100px;
+
+		}
+
+		.first-content .first-content-foot .info {
+			width: 358px;
+			/* height: 222px; */
+
+			border: 1px solid #e6e6e6;
+			float: left;
+			margin-right: 30px;
+			border-radius: 10px;
+			box-sizing: border-box;
+			padding: 23px;
+		}
+
+		.first-content .first-content-foot .info:last-child {
+			margin-right: 0;
+		}
+
+		.first-content .first-content-foot .info i {
+			float: left;
+			font-size: 50px;
+		}
+
+		.info-right {
+			width: 248px;
+			/* height: 174px; */
+			float: right;
+		}
+
+		.info-right h3 {
+			font-size: 24px;
+			font-weight: normal;
+			color: #3b3b40
+		}
+
+		.info-right p {
+			font-size: 14px;
+			line-height: 28px;
+			color: #b5bdc5;
+			margin-bottom: 14px;
+		}
+
+		.info-right a {
+			color: #22ba60;
+			font-size: 14px;
+			font-weight: bold;
+			text-decoration: none;
+			margin-top: 20px;
+		}
+
+		.two-content {
+			border-top: 1px solid #efefef;
+			/* height: 862px; */
+			background-color: #f9f9f9;
+			overflow: hidden;
+		}
+
+		.two-content .inner {
+			/* height: 862px;*/
+		}
+
+		.two-content .two-content-foot {
+			overflow: hidden;
+			margin-bottom: 120px;
+		}
+
+		.two-content .two-pic {
+			width: 358px;
+			/* height: 447px; */
+			float: left;
+			border-radius: 8px;
+			overflow: hidden;
+			border: 1px solid #efefef;
+			margin-right: 30px;
+		}
+
+		.two-content .two-pic:last-child {
+			margin-right: 0;
+		}
+
+		.two-content .info-right {
+			float: none;
+			width: 358px;
+			/* height: 209px;	 */
+			padding: 32px 30px;
+			box-sizing: border-box;
+		}
+
+		.two-content .info-right h3 {
+			font-size: 20px;
+			margin-bottom: 14px;
+		}
+
+		.three-content {
+			width: 100%;
+			height: 690px;
+			border-top: 1px solid #efefef;
+		}
+
+		.three-content .inner {
+			/* height: 690px; */
+		}
+
+		.three-content .three-content-left {
+			width: 266px;
+			/* height: 690px; */
+			float: left;
+		}
+
+		.three-content .three-content-left h3 {
+			margin-top: 128px;
+			font-size: 32px;
+			font-weight: normal;
+			margin-bottom: 14px;
+		}
+
+		.three-content .three-content-left p {
+			line-height: 30px;
+			font-size: 16px;
+			color: #b1b1b1;
+		}
+
+		.three-content .three-content-center {
+			float: left;
+			width: 360px;
+			border-radius: 10px;
+			/* margin-left: 122px;
+		margin-right: 128px; */
+			/* margin-top: 98px;
+		margin-bottom: 50px; */
+			margin: 98px 128px 50px 122px;
+		}
+
+		.three-content .three-content-right {
+			float: left;
+			width: 264px;
+			/* height: 690px; */
+		}
+
+		.three-content .three-content-right p {
+			margin-top: 128px;
+			font-size: 14px;
+			color: #b1b1b1;
+			line-height: 30px;
+		}
+
+		.three-content .three-content-right a {
+			display: block;
+			width: 125px;
+			height: 45px;
+			border-radius: 5px;
+			background-color: #18ba60;
+			line-height: 45px;
+			text-align: center;
+			text-decoration: none;
+			color: #fff;
+			font-size: 14px;
+			font-weight: bold;
+			margin-top: 38px;
+		}
+
+		.three-content .three-content-right a:hover {
+			background-color: #3b526b;
+		}
+
+		.four-content {
+			width: 100%;
+			/* height: 308px; */
+			background-image: url(./images/parallax-1.jpg);
+			background-size: cover;
+			background-attachment: fixed;
+			background-position: center center;
+			border-top: 1px solid #efefef;
+			padding-bottom: 100px;
+		}
+
+		.four-content .inner {
+			/* height: 308px; */
+			overflow: hidden;
+		}
+
+		.four-content .number {
+			width: 160px;
+			/* height: 125px; */
+			float: left;
+			margin-right: 166.66px;
+			margin-top: 92px;
+			text-align: center;
+		}
+
+		.four-content .number:last-child {
+			margin-right: 0;
+		}
+
+		.four-content .number h3 {
+			font-size: 40px;
+			color: #fff;
+			margin-top: 10px;
+			margin-bottom: 25px;
+			font-weight: normal;
+		}
+
+		.four-content .number p {
+			font-size: 20px;
+			color: #fff;
+		}
+
+		.five-content {
+			width: 100%;
+			background-color: #f9f9f9;
+			/* height: 900px; */
+			padding-bottom: 40px;
+		}
+
+		.five-content .inner {
+			/* height: 900px; */
+		}
+
+		.five-content .five-content-nav {
+			text-align: center;
+			margin-bottom: 28px;
+		}
+
+		.five-content .five-content-nav a {
+			color: #bcbbbb;
+			font-size: 12px;
+			text-decoration: none;
+		}
+
+		.five-content .five-content-nav a:first-child {
+			color: #18ba60;
+		}
+
+		.five-content .five-content-nav a:hover {
+			color: #18ba60;
+		}
+
+		.five-content .five-content-nav span {
+			font-size: 14px;
+			color: #bcbbbb;
+			margin-left: 12px;
+			margin-right: 12px;
+		}
+
+		.five-content .five-content-pics {
+			width: 100%;
+			/* height: 510px; */
+		}
+
+
+
+		.five-content .five-content-pics .pic {
+			float: left;
+			width: 360px;
+			height: 240px;
+			margin-right: 20px;
+			margin-bottom: 20px;
+			border-radius: 10px;
+			overflow: hidden;
+		}
+
+		.five-content .five-content-pics .pic.one {
+			background-image: url(./images/pr1.jpg);
+		}
+
+		.five-content .five-content-pics .pic.two {
+			background-image: url(./images/pr2.jpg);
+		}
+
+		.five-content .five-content-pics .pic.three {
+			background-image: url(./images/pr3.jpg);
+		}
+
+		.five-content .five-content-pics .pic.four {
+			background-image: url(./images/pr4.jpg);
+		}
+
+		.five-content .five-content-pics .pic.five {
+			background-image: url(./images/pr5.jpg);
+		}
+
+		.five-content .five-content-pics .pic.six {
+			background-image: url(./images/pr8.jpg);
+		}
+
+		.five-content .five-content-pics .pic:last-child {
+			margin-right: 0;
+		}
+
+		.five-content .five-content-pics .pic .text {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			transition: opacity 0.5s;
+			text-align: center;
+			color: #fff;
+			overflow: hidden;
+		}
+
+		.five-content .five-content-pics .pic .text:hover {
+			opacity: 1;
+		}
+
+		.five-content .five-content-pics .pic .text h3 {
+			font-size: 30px;
+			margin-top: 70px;
+			font-weight: normal;
+		}
+
+		.five-content .five-content-pics .pic .text p {
+			font-size: 16px;
+			margin-top: 20px;
+		}
+
+		.six-content {
+			width: 100%;
+			/* height: 448px; */
+			background-image: url(./images/parallax-4.jpg);
+			background-size: cover;
+			background-attachment: fixed;
+			background-position: center center;
+			border-top: 1px solid #efefef;
+			padding-bottom: 80px;
+		}
+
+		.six-content .inner {
+			/* height: 448px; */
+
+		}
+
+		.six-content h2 {
+			font-size: 40px;
+			margin-top: 50px;
+			margin-bottom: 72px;
+			color: #fff;
+			font-weight: normal;
+			text-align: center;
+		}
+
+		.six-content .six-content-foot {
+			width: 100%;
+			overflow: hidden;
+		}
+
+		.six-content .six-content-foot .six-foot-content {
+			width: 528px;
+			/* height: 150px; */
+			float: left;
+		}
+
+		.six-content .six-content-foot .six-foot-content:last-child {
+			float: right;
+		}
+
+		.six-content .six-content-foot .six-foot-content img {
+			width: 80px;
+			border-radius: 50%;
+			float: left;
+		}
+
+		.six-content .six-content-foot .six-foot-content .user-info {
+			width: 418px;
+			/* height: 150px; */
+			float: right;
+		}
+
+		.six-content .six-content-foot .six-foot-content .user-info h3:first-child {
+			font-style: 18px;
+			color: #18ba60;
+		}
+
+		.six-content .six-content-foot .six-foot-content .user-info h3:nth-child(2) {
+			font-size: 18px;
+			color: #fff;
+			line-height: 26px;
+			margin-top: 8px;
+		}
+
+		.six-content .six-content-foot .six-foot-content .user-info p {
+			font-size: 16px;
+			color: #fff;
+			line-height: 26px;
+		}
+
+		.seven-content {
+			width: 100%;
+			/* height: 188px; */
+			padding-bottom: 70px;
+		}
+
+		.seven-content .inner {
+			/* height: 188px; */
+			overflow: hidden;
+		}
+
+		.seven-content img {
+			display: block;
+			float: left;
+			width: 184px;
+			margin-top: 66px;
+			margin-right: 55px;
+			opacity: 0.5;
+			transition: opacity 0.5s;
+		}
+
+		.seven-content img:last-child {
+			margin-right: 0;
+		}
+
+		.seven-content img:hover {
+			opacity: 1;
+
+		}
+
+		footer {
+			width: 100%;
+			/* height: 474px; */
+			/* background-color: #007fff; */
+		}
+
+		.foot-top {
+			/* height: 414px; */
+			background-color: #222222;
+			padding-bottom: 60px;
+		}
+
+		.foot-top .inner {
+			/* height: 414px; */
+			overflow: hidden;
+		}
+
+		.foot-top .foot-top-one {
+			/* height: 414px; */
+			width: 262px;
+			float: left;
+			margin-right: 126px;
+		}
+
+		.foot-top .foot-top-one img {
+			margin-top: 50px;
+			margin-bottom: 24px;
+		}
+
+		.foot-top .foot-top-one p {
+			font-size: 14px;
+			color: #aaaaaa;
+			line-height: 30px;
+		}
+
+		.foot-top .foot-top-one ul {
+			list-style: none;
+			margin-top: 14px;
+		}
+
+		.foot-top .foot-top-one ul li {
+			color: #fff;
+			font-size: 14px;
+			line-height: 40px;
+		}
+
+		.foot-top .foot-top-two {
+			/* height: 414px; */
+			width: 266px;
+			float: left;
+			margin-right: 28px;
+		}
+
+		.foot-top .foot-top-two h3 {
+			margin-top: 54px;
+			margin-bottom: 45px;
+			color: #fff;
+			font-size: 20px;
+			font-weight: normal;
+		}
+
+		.foot-top .foot-top-two div {
+			width: 266px;
+			/* height: 54px; */
+			margin-bottom: 20px;
+			overflow: hidden;
+		}
+
+		.foot-top .foot-top-two div:last-child {
+			margin-bottom: 0;
+		}
+
+		.foot-top .foot-top-two div img {
+			width: 65px;
+			border-radius: 4px;
+			float: left;
+		}
+
+		.foot-top .foot-top-two div p {
+			width: 188px;
+			/* height: 54px; */
+			font-size: 14px;
+			color: #aaaaaa;
+			float: right;
+			line-height: 20px;
+			cursor: pointer;
+		}
+
+		.foot-top .foot-top-three {
+			/* height: 414px; */
+			width: 100px;
+			float: left;
+			margin-right: 90px;
+
+		}
+
+		.foot-top .foot-top-three h3 {
+			margin-top: 54px;
+			margin-bottom: 45px;
+			color: #fff;
+			font-size: 20px;
+			font-weight: normal;
+		}
+
+		.foot-top .foot-top-three a {
+			color: #fff;
+			font-size: 16px;
+			line-height: 30px;
+			text-decoration: none;
+		}
+
+		.foot-top .foot-top-three a:hover {
+			color: #18ba60;
+		}
+
+		.foot-top .foot-top-four {
+			/* height: 414px; */
+			width: 264px;
+			float: left;
+
+		}
+
+		.foot-top .foot-top-four h3 {
+			margin-top: 52px;
+			margin-bottom: 45px;
+			color: #fff;
+			font-size: 20px;
+			font-weight: normal;
+		}
+
+		.foot-top .foot-top-four div {
+			width: 261px;
+			height: 40px;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			background-color: #fff;
+			overflow: hidden;
+		}
+
+		.foot-top .foot-top-four input {
+			border: none;
+			width: 206px;
+			font-size: 16px;
+			line-height: 40px;
+			text-indent: 10px;
+			outline: none;
+			float: left;
+		}
+
+		.foot-top .foot-top-four a {
+			display: block;
+			float: left;
+			width: 54px;
+			height: 40px;
+			background-color: #18ba60;
+			text-align: center;
+			line-height: 40px;
+			color: #fff;
+			text-decoration: none;
+			border-left: 1px solid #ccc;
+			font-size: 14px;
+
+		}
+
+		.foot-top .foot-top-four a:hover {
+			background-color: #fff;
+			color: #ccc;
+		}
+
+		.foot-bottom {
+			width: 100%;
+			/* height: 60px; */
+			background-color: #1c1c1c;
+			padding: 22px 0;
+		}
+
+		.foot-bottom .inner {
+			overflow: hidden;
+		}
+
+		.foot-bottom .foot-bottom-left {
+			float: left;
+			width: 160px;
+			/* height: 60px; */
+			/* line-height: 60px; */
+			color: #fff;
+			font-size: 16px;
+
+		}
+
+		.foot-bottom .foot-bottom-left i {
+			margin-left: 10px;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+
+		.foot-bottom .foot-bottom-left i:hover {
+			color: #18ba60;
+		}
+
+		.foot-bottom p {
+			float: right;
+			font-size: 16px;
+			color: #aaaaaa;
+			/* line-height: 60px; */
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<div class="header-top">
+			<div class="inner">
+				<div class="top-info">
+					<p><i class="iconfont icon-shizhong"></i>Time: Tusday-Monday : 9:00am-6:00pm</p>
+					<p><i class="iconfont icon-dianhua"></i>Phone: +1-23-456789</p>
+					<p><i class="iconfont icon-youxiang-copy-copy"></i>Email: example@email.com</p>
+				</div>
+				<a href="http://www.baidu.com">Get a Quote</a>
+			</div>
+		</div>
+		<div class="header-mid">
+			<div class="inner">
+				<div class="logo">
+					<img src="./images/logo.png" alt="" />
+				</div>
+				<nav>
+					<ul>
+						<li><a class="first" href="" herf="#1">HOME </a></li>
+						<li><a href="" herf="#2">A[BOUT <i class="iconfont icon-jiantouarrow483"></i></a></li>
+						<li><a href="" herf="#3">SERVICES <i class="iconfont icon-jiantouarrow483"></i></a></li>
+						<li><a href="" herf="#4">PROJECTS <i class="iconfont icon-jiantouarrow483"></i></a></li>
+						<li><a href="" herf="#5">BLOG <i class="iconfont icon-jiantouarrow483"></i></a></li>
+						<li><a href="" herf="#6">PAGES <i class="iconfont icon-jiantouarrow483"></i></a></li>
+						<li><a href="" herf="#7">CONTACT </a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="banner">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide banner-one">
+						<div class="inner">
+							<h2 class="ani" swiper-animate-effect="slideInDown" swiper-animate-duration="1.5s">
+								You Can change the World
+
+							</h2>
+							<p>Every failure is a blessing hidden under the mask, provided that it teaches something
+								that a person would not otherwise
+								learn. Most of the so-called failures are just a temporary defeat.</p>
+							<a href="#">Read More></a>
+						</div>
+					</div>
+					<div class="swiper-slide banner-two">
+						<div class="inner">
+							<h2 class="ani" swiper-animate-effect="slideInDown" swiper-animate-duration="1.5s">You Can,
+								If You Believe You Can
+
+							</h2>
+							<p> Define your goals! Work to achieve them! Direct your thoughts, control emotions, act,
+								and you will become the true
+								creator of your destiny. You will find the answers you need if you look for them.</p>
+							<a href="#">Read More></a>
+						</div>
+
+					</div>
+					<div class="swiper-slide banner-three">
+						<div class="inner">
+							<h2 class="ani" swiper-animate-effect="slideInDown" swiper-animate-duration="1.5s">Courage
+								is grace under pressure
+							</h2>
+							<p>The starting point of any achievement is desire. Keep it constantly in your memory. Weak
+								desires bring in weak results,
+								just as a small amount of fire gives a small amount of heat.</p>
+							<a href="#">Read More></a>
+						</div>
+
+					</div>
+					<div class="swiper-slide banner-four">
+						<div class="inner">
+							<h2 class="ani" swiper-animate-effect="slideInDown" swiper-animate-duration="1.5s">Make
+								Business Easy with us</h2>
+							<p>If people wanted to improve themselves instead of saving the whole world, if they tried
+								to achieve inner freedom instead
+								of liberating all of humanity, how much they would do for the real liberation of
+								mankind.</p> <a href="#">Read More></a>
+						</div>
+
+					</div>
+				</div>
+				<!-- 如果需要分页器 -->
+				<div class="swiper-pagination"></div>
+
+				<!-- 如果需要导航按钮 -->
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+
+
+			</div>
+		</div>
+	</header>
+	<!-- <div class="header"></div> -->
+	<!-- header+.main+footer -->
+	<div class="main">
+		<div class="first-content">
+			<div class="inner">
+				<div class="first-content-head">
+					<h3>Let's make your own Business</h3>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+					</p>
+					<p>incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="first-content-foot">
+					<div class="feature info">
+						<i class="iconfont icon-shizhong"></i>
+						<div class="info-right">
+							<h3>Many features</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer adipiscing erat eget
+								risus sollicitudin pellentesque et non erat.
+							</p>
+							<a href="#">Read More></a>
+						</div>
+					</div>
+					<div class="analy info">
+						<i class="iconfont icon-dengpao"></i>
+						<div class="info-right">
+							<h3>Analytics</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer adipiscing erat eget
+								risus sollicitudin pellentesque et non erat.
+							</p>
+							<a href="#">Read More></a>
+						</div>
+					</div>
+					<div class="custom info">
+						<i class="iconfont icon-xing"></i>
+						<div class="info-right">
+							<h3>Customer Insights</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer adipiscing erat eget
+								risus sollicitudin pellentesque et non erat.
+							</p>
+							<a href="#">Read More></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="two-content">
+			<div class="inner">
+				<div class="first-content-head">
+					<h3>Our Services</h3>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+					</p>
+					<p>incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="two-content-foot">
+					<div class="two-pic">
+						<img src="./images/serv-9.jpg" alt="">
+						<div class="info-right">
+							<h3>Business Advisor</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer adipiscing erat eget
+								risus sollicitudin
+								pellentesque et non erat.
+							</p>
+							<a href="#">Read more></a>
+						</div>
+					</div>
+					<div class="two-pic">
+						<img src="./images/serv-10.jpg" alt="">
+						<div class="info-right">
+							<h3>Financial Planning</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer adipiscing erat eget
+								risus sollicitudin
+								pellentesque et non erat.
+							</p>
+							<a href="#">Read more></a>
+						</div>
+					</div>
+					<div class="two-pic">
+
+						<img src="./images/serv-7.jpg" alt="">
+						<div class="info-right">
+							<h3>Social Marketing</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer adipiscing erat eget
+								risus sollicitudin
+								pellentesque et non erat.
+							</p>
+							<a href="#">Read more></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="three-content">
+			<div class="inner">
+				<div class="three-content-left">
+					<h3>
+						We are creative company</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+						labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+						laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+						voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					</p>
+				</div>
+				<img src="./images/team.jpg" alt="
+				  " class="three-content-center">
+				<div class="three-content-right">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+						labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+						laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+						voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					</p>
+					<a href="">Read more</a>
+				</div>
+			</div>
+		</div>
+		<div class="four-content">
+			<div class="inner">
+				<div class="number">
+					<h3 class="counter">1200</h3>
+					<p>Hours Of Work</p>
+				</div>
+				<div class="number">
+					<h3 class="counter">500</h3>
+					<p>Complete Project</p>
+				</div>
+				<div class="number">
+					<h3 class="counter">100</h3>
+					<p>Happy Clients</p>
+				</div>
+				<div class="number">
+					<h3 class="counter">20</h3>
+					<p>Awards</p>
+				</div>
+			</div>
+		</div>
+		<div class="five-content">
+			<div class="inner">
+				<div class="first-content-head">
+
+					<h2>
+						Latest Projects
+					</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+					</p>
+					<p>incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="five-content-foot">
+					<div class="five-content-nav">
+						<a class="all" href="javascript:;">Show all</a>
+						<span>/</span>
+						<a class="a" href="javascript:;">Financial</a>
+						<span>/</span>
+						<a class="b" href="javascript:;">Business</a>
+						<span>/</span>
+						<a class="c" href="javascript:;">Marketing</a>
+					</div>
+					<div class="five-content-pics">
+
+						<!-- <img src="./images/pr1.jpg" alt="">
+							<img src="./images/pr2.jpg" alt="">
+							<img src="./images/pr3.jpg" alt=""> -->
+						<div class="element-item pic one bb">
+							<div class="text">
+								<h3>Designing</h3>
+								<p>Lorem ipsum dolor sit amet</p>
+							</div>
+						</div>
+						<div class="element-item pic two bb">
+							<div class="text">
+								<h3>Designing</h3>
+								<p>Lorem ipsum dolor sit amet</p>
+							</div>
+						</div>
+						<div class="element-item pic three aa">
+							<div class="text">
+								<h3>Designing</h3>
+								<p>Lorem ipsum dolor sit amet</p>
+							</div>
+						</div>
+						<!-- <img src="./images/pr4.jpg" alt="">
+							<img src="./images/pr5.jpg" alt="">
+							<img src="./images/pr8.jpg" alt=""> -->
+						<div class="element-item pic four aa">
+							<div class="text">
+								<h3>Designing</h3>
+								<p>Lorem ipsum dolor sit amet</p>
+							</div>
+						</div>
+						<div class="element-item pic five cc">
+							<div class="text">
+								<h3>Designing</h3>
+								<p>Lorem ipsum dolor sit amet</p>
+							</div>
+						</div>
+						<div class="element-item pic six aa">
+							<div class="text">
+								<h3>Designing</h3>
+								<p>Lorem ipsum dolor sit amet</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="six-content">
+			<div class="inner">
+				<h2>What our Clients Say</h2>
+				<div class="six-content-foot">
+					<div class="six-foot-content">
+						<img src="./images/member1.jpg" alt="" />
+						<div class="user-info">
+							<h3>Web Developer </h3>
+							<h3>Martin Harris</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt
+								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+								ullamco.</p>
+						</div>
+					</div>
+					<div class="six-foot-content">
+						<img src="./images/member2.jpg" alt="" />
+						<div class="user-info">
+							<h3>Web Developer </h3>
+							<h3>Martin Harris</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt
+								ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+								ullamco.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="seven-content">
+			<div class="inner">
+				<img src="./images/part-1.png" alt="">
+				<img src="./images/part-2.png" alt="">
+				<img src="./images/part-3.png" alt="">
+				<img src="./images/part-4.png" alt="">
+				<img src="./images/part-5.png" alt="">
+			</div>
+		</div>
+	</div>
+	</div>
+	<footer>
+		<div class="foot-top">
+			<div class="inner">
+				<div class="foot-top-one">
+					<img src="./images/logo-2.png" alt="">
+					<p>
+						Lorem ipsum dolor sit amet, ad per sint graece, vix quod nusquam ea.
+					</p>
+					<ul>
+						<li>E-mail: example@mail.com</li>
+						<li> Phone: +1-23-456789</li>
+						<li> Time: Tus-Mon : 9:00am-6:00pm</li>
+						<li> Map: Sheram 113</li>
+					</ul>
+				</div>
+				<div class="foot-top-two">
+					<h3>
+						RECENT POSTS
+					</h3>
+					<div>
+						<img src="./images/footer-post-1.jpg" alt="">
+						<p>Lorem ipsum dolor sit amet, ad per sint graece</p>
+					</div>
+					<div>
+						<img src="./images/footer-post-2.jpg" alt="">
+						<p>Lorem ipsum dolor sit amet, ad per sint graece</p>
+					</div>
+					<div>
+						<img src="./images/footer-post-3.jpg" alt="">
+						<p>Lorem ipsum dolor sit amet, ad per sint graece</p>
+					</div>
+				</div>
+				<div class="foot-top-three">
+					<h3>LINKS</h3>
+					<a href="">HOME</a><br />
+					<a href="">SERVICES</a><br />
+					<a href="">PAGES</a><br />
+					<a href="">BLOG</a><br />
+					<a href="">PORTFOLIO</a><br />
+				</div>
+				<div class="foot-top-four">
+					<h3>
+						NEWSSLETTER
+					</h3>
+					<div>
+						<input placeholder="Your Email" type="text" />
+						<a href="">搜索</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		</div>
+		<div class="foot-bottom">
+			<div class="inner">
+				<div class="foot-bottom-left">
+					<i class="iconfont icon-facebook"></i>
+					<i class="iconfont icon-twitter"></i>
+					<i class="iconfont icon-instagram"></i>
+					<i class="iconfont icon-pinterestpinterest31"></i>
+				</div>
+				<p> <span style="font-family: arial;">©</span> Copyright 2017 SpecThemes. All Rights reserved</p>
+			</div>
+		</div>
+	</footer>
+	<script src="./js/jquery-1.11.0.min.js"></script>
+	<script src="./js/jquery.countup.min.js"></script>
+	<script src="./js/jquery.waypoints.min.js"></script>
+	<script src="./js/isotope.pkgd.min.js"></script>
+	<script src="./js/swiper.min.js"></script>
+	<script src="./js/swiper.animate1.0.3.min.js"></script>
+	<script>
+		$(".counter").countUp();
+		$(".five-content-pics").isotope({ filter: "*" });
+		$(".all").click(function () {
+			$(".five-content-pics").isotope({ filter: "*" });
+			$(".all").css(".color", "#18ba60").siblings("color", "#bcbbbb")
+		});
+		$(".a").click(function () {
+			$(".five-content-pics").isotope({ filter: ".aa" });
+			$(".a").css(".color", "#18ba60").siblings("color", "#bcbbbb")
+		});
+		$(".b").click(function () {
+			$(".five-content-pics").isotope({ filter: ".bb" });
+			$(".b").css(".color", "#18ba60").siblings("color", "#bcbbbb")
+		});
+		$(".c").click(function () {
+			$(".five-content-pics").isotope({ filter: ".cc" });
+			$(".c").css(".color", "#18ba60").siblings("color", "#bcbbbb")
+		});
+		var mySwiper = new Swiper('.swiper-container', {
+			loop: true, // 循环模式选项
+
+			// 如果需要分页器
+			pagination: {
+				el: '.swiper-pagination',
+				type: "progressbar",
+			},
+
+			// 如果需要前进后退按钮
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			on: {
+				init: function () {
+					swiperAnimateCache(this); //隐藏动画元素 
+					swiperAnimate(this); //初始化完成开始动画
+				},
+				slideChangeTransitionEnd: function () {
+					swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+					//this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+				}
+			}
+
+		})        
+	</script>
+</body>
+
+</html>

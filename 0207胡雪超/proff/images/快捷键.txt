@@ -1,0 +1,7 @@
+ctrl+enter 在当前的下一行另起一行
+shift + ctrl +enter 在当前的上一行另起一行
+ctrl + d 选择重复的内容
+alt 多光标
+ctrl + shift +箭头 移动当前行
+ctrl + z撤销
+ctrl + y反撤销

@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <!-- 页面标题左侧的小 loge -->
+    <!-- 百度搜索ico制作 -->
+    <link rel="shortct icon" href="./imges/logo_02.png" type="image/x-icon" />
+    <!-- PS切图 -->
+    <!-- 先使用魔棒工具选中想要切的图 使用（shift加魔棒）清空镍层的选区 -->
+    <!-- ctrl+j将选中部分复制 PS软件右侧关闭其他的图层 纸显示复制的 -->
+    <!-- 使用切片工具选中想切的部分 ctrl+shift+alt+s保存图片 保存的时候弹出的面板选择图片格式必须是png-24 或者gif 其他不需处理，直接点击下方存储 弹出选择位置的窗口，选桌面，然后切片选项选城选中的图片 点击保存 -->
+    <!--切好的图片会自动放在桌面下的images文件夹内 桌面没有该文件夹自动创建 -->
+    <!-- 引入阿里图标 复制链接的时候加上http:-->
+    <!-- 这个链接包含当前项目下（阿里库创建的）的所哟图标 -->
+
+    <link
+      rel="stylesheet"
+      href="http://at.alicdn.com/t/font_2206059_yulk83i6naf.css"
+    />
+    <!-- swiper的样式文件，也就是轮播图的样式-->
+    <link rel="stylesheet" href="./css/swiper.min.css" />
+    <!-- animate是动画样式文件 -->
+    <link rel="stylesheet" href="./css/animate.min.css" />
+    <!-- link 链接的是单色图标非symbol的 -->
+    <!-- linki下边对应的是i标签 -->
+    <!-- src     多色   symbol -->
+    <!-- script对应下边的svg标签 -->
+    <!-- 然后需要在结构内使用i标签表示具体的图标 -->
+    <style>
+      /* 样式初始化 */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 自定义字体，当电脑上没有你想用的字体时需要自定义字体 */
+      @font-face {
+        font-family: myfont;
+        src: url(./fonts/fontawesome-webfont.ttf),
+          url(./fonts/fontawesome-webfont.eot),
+          url(./fonts/fontawesome-webfont.svg),
+          url(./fonts/fontawesome-webfont.woff);
+      }
+      /* 页面的排版布局一般不设置高度 并不是所有搞不都设置 酌情处理 */
+      body {
+        /* 字体会继承 */
+        font-family: myfont;
+        /* 使用自定义字体后页面的所有文字都是自定义字体了 有些文字就会出现问题 稍作调整 */
+      }
+      /*选择器  1.根据class名 2. 标签名（看好了用）*/
+      /*header样式开始*/
+      header {
+        /*样式*/
+        /*样式的语法 名：值；*/
+        width: 100%;
+        /* height: 657px; */
+        /* background-color: #ccc; */
+      }
+      header .banner .inner {
+        width: 800px;
+        padding-left: 40px;
+        float: left;
+      }
+      .header-top {
+        width: 100%;
+        height: 51px;
+        background-color: #3b526b;
+      }
+      /* header top下的inner */
+      .header-top .inner {
+        height: 51px;
+      }
+      /* 公共的inner样式 */
+      .inner {
+        width: 1140px;
+        /*background-color:teal;*/
+        /*margin:0 auto;上下0 左右auto*/
+        /*水平居中*/
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 51px;
+      }
+      .header-top-info {
+        width: 636px;
+        height: 51px;
+        /*background-color: green;*/
+        float: left;
+      }
+      .header-top a {
+        width: 140px;
+        height: 51px;
+        display: block;
+        background-color: #18ba60;
+        float: right;
+        color: #fff;
+        /*字号一般偶数*/
+        font-size: 14px;
+        line-height: 51px;
+        text-align: center;
+        text-decoration: none;
+      }
+      .header-top-info p {
+        line-height: 51px;
+        /* float: */
+        /*右间距*/
+        margin-right: 13px;
+        font-size: 12px;
+        float: left;
+        color: #fff;
+      }
+      /*.header-top-info p img{*/
+      /*图片的大小只需设置宽度*/
+      .header-top-info p i {
+        color: #18ba60;
+        font-size: 16px;
+      }
+
+      .header-mid {
+        width: 100%;
+        background-color: #fff;
+      }
+      .header-mid .inner {
+        /* inner的高度去掉之后，由于里面有两个儿子浮动 父级撑不起来高 需要处理 */
+        /* 方案一 给父级加 overfloaw:hidden */
+        /* height: 100px; */
+        overflow: hidden;
+      }
+      .header-mid .logo {
+        float: left;
+        width: 168px;
+        margin-top: 24px;
+        margin-bottom: 16px;
+      }
+      .header-mid .logo img {
+        /* 图标不设置大小的话，就是默认的大小  */
+        /* 设置100%就和上边的168一样 */
+        width: 100%;
+      }
+      .header-mid nav {
+        float: right;
+        width: 803px;
+        /* height: 100px; */
+        /* background-color: #ccc; */
+      }
+      /* 列表样式 */
+      /* 列表项li默认竖向排列 */
+      .header-mid nav ul {
+        list-style: none;
+      }
+      .header-mid nav ul li {
+        float: left;
+        line-height: 100px;
+      }
+      .header-mid nav ul li a {
+        text-decoration: none;
+        color: #000;
+        font-size: 12px;
+        display: block;
+        /* font-weight: 加粗; */
+        width: 100px;
+        /* 填充 padding: ; */
+        padding-left: 2px;
+        padding-right: 2px;
+        /* 因为line-height继承了 */
+        height: 50px;
+        line-height: 50px;
+        margin-top: 20px;
+        /* border: 1px;  */
+        /* margin-right: 10px; */
+      }
+      .header-mid nav ul li a i {
+        font-size: 12px;
+        /* float: right; */
+        margin-right: 26px;
+      }
+      /* 划过 */
+      .header-mid nav ul li a:hover {
+        color: #18ba60;
+      }
+      .header-mid nav ul li .first {
+        color: #18ba60;
+        /* 当通过多种方式找到同一个人，写了相同的样式，到底哪一个起作用 */
+        /* 需要看选择方案的权重 class 名权重是10 标签名 1 相加 */
+        /* 权重相同的下面的覆盖上面的 */
+      }
+
+      .header-mid nav ul li a i {
+        font-size: 12px;
+        /* pc字号最小12想要更小的话可以换成图片（不推荐）还可以使用缩放样式 */
+        display: block;
+        transform: scale(0.7);
+        float: right;
+      }
+      .banner {
+        width: 100%;
+        height: 506px;
+        /* background-color: #000; */
+        /* 背景图 路径 */
+        /* background-image: url(./imges/banner.jpg); */
+        /*100% 宽度占满 高度自适应（背景可能铺不满）
+        cover  全覆盖  图片不变形*/
+        /* 宽 高 不常用 */
+
+        /* 背景图大小 */
+        /* background-size: cover; */
+        /* 背景图默认自动重复   不重复 */
+        /* no-repeat 不重复  repeat-x 横向重复  repeat-y 纵向重复 */
+        /* background-repeat: no-repeat; */
+        /* 修改背景图的位置 */
+        /* background-position: center center; */
+      }
+      /* 轮播图样式 */
+      .banner .swiper-container {
+        width: 100%;
+        height: 506px;
+      }
+      .banner .banner-one {
+        background-image: url(./imges/slide-2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .banner .banner-two {
+        background-image: url(./imges/slide-3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .banner .banner-three {
+        background-image: url(./imges/slide-4.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .banner .banner-four {
+        background-image: url(./imges/banner.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      /* 向左的箭头样式 */
+      .swiper-button-prev:after,
+      .swiper-button-next:after {
+        font-size: 26px;
+        color: #b5bdc5;
+        font-weight: bold;
+      }
+      .banner .swiper-pagination-progressbar-fill {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* 每个轮播图内文字 */
+      .banner .swiper-slide {
+        /* 让里面的文字有些距离 */
+        padding-top: 100px;
+        /* 使用inner样式不需要padding 样式 */
+        /* padding-left: 40px; */
+        /* padding-right: 300px; */
+        /* padding 会变大盒子 所以加 box-sizing */
+        box-sizing: border-box;
+      }
+      .banner .swiper-slide h2 {
+        font-size: 50px;
+        color: #fff;
+        font-weight: lighter;
+        line-height: 200%;
+        /* margin-bottom: 20px; */
+      }
+      .banner .swiper-slide p {
+        font-size: 20px;
+        font-weight: lighter;
+        color: #fff;
+        line-height: 200%;
+        margin-top: 20px;
+      }
+      /* 与 three-content 的a 一样 */
+      .banner .swiper-slide a {
+        display: block;
+        width: 125px;
+        height: 45px;
+        border-radius: 5px;
+        background-color: #18ba60;
+        line-height: 45px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 38px;
+      }
+      .banner .swiper-slide a:hover {
+        background-color: #3b526b;
+      }
+      /*main 样式开始*/
+      .main {
+        width: 100%;
+        /* height: 4073px; */
+        /* background-color: #00b3d4; */
+      }
+      /* main第一块 */
+      .first-content {
+        width: 100%;
+        /* height: 673px; */
+        background-color: #fff;
+      }
+      .first-content .inner {
+        /* height: 673px; */
+        /* background-color: pink; */
+      }
+      .content-head {
+        width: 100%;
+        /* height: 282px; */
+        /* background-color: #ccc; */
+        text-align: center;
+        overflow: hidden;
+        margin-bottom: 50px;
+      }
+      .content-head h2 {
+        font-size: 34px;
+        font-weight: normal;
+        margin-top: 108px;
+        margin-bottom: 22px;
+        /* 当给父级下的第一个孩子写 margin-top 的时候，往往都会出现问题 margin-top好像给了父级一样 */
+        /* 解决方案 1 给父级添加 overfolw:hidden (溢出隐藏)*/
+        /* 使用 padding 去做间距，需要给父级做填充，并且父级的高度要减少 */
+      }
+      .content-head p {
+        font-size: 16px;
+        color: #b5bdc5;
+        line-height: 30px;
+      }
+      /* 第一块的底 */
+      .first-content .first-content-foot {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 100px;
+        /* height: 391px; */
+        /* background-color: red; */
+      }
+      /* 第一块的底的三个结构，大小都是一样的 功能都一样 所以样式一起写 */
+      /* >的意思是找儿子 */
+      /* 空格的意思是找后代 */
+      /* .first-content .first-content-foot .info >div*/
+      .first-content .first-content-foot .info {
+        width: 358px;
+        /* height: 222px; */
+        /* background-color: yellow; */
+        /* 外边框 */
+        border: 1px solid #e6e6e6;
+        float: left;
+        margin-right: 30px;
+        /* 圆角 */
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 8px;
+        /* padding(四周间距)会将info变大，直接加一个box-sizing:border-box;就不变大了 */
+        /* padding-top:;
+        padding-left: 
+        padding-right: ; */
+      }
+      /* 找到info并且属于他的最后一个孩子 */
+      .first-content .first-content-foot .info:last-child {
+        margin-right: 0;
+      }
+      .first-content .first-content-foot .info i {
+        float: left;
+        font-size: 50px;
+        margin-left: 20px;
+        margin-top: 20px;
+      }
+      .info-right {
+        width: 248px;
+        /* height: 174px; */
+        float: right;
+        /* line-height: 26px; */
+      }
+      .info-right h3 {
+        font-size: 22px;
+        font-weight: normal;
+        /* color: #b5bdc5; */
+        /* margin-bottom: 20px; */
+      }
+      .info-right p {
+        font-size: 14px;
+        line-height: 28px;
+        color: #b5bdc5;
+        /* margin-bottom: 14px; */
+      }
+      .info-right a {
+        color: #22ba60;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      /* mian内第二块 */
+      .two-content {
+        /* 上边框 */
+        border-top: 1px solid #efefef;
+        /* height: 862px; */
+        width: 100%;
+        background-color: #f9f9f9;
+        border-bottom: 1px solid #efefef;
+        overflow: hidden;
+        /* 1.溢出隐藏 2.如果自己浮动了 父级不会称其俩高度 加上可以称其俩 3.子集 margin-top margin-bottom 不起作用 加 oh 起作用 */
+      }
+      .two-content .inner {
+        /* height: 862px; */
+        /* background-color: #fff; */
+      }
+      .two-content .two-content-foot {
+        overflow: hidden;
+        margin-bottom: 120px;
+      }
+      .two-content .two-pic {
+        width: 358px;
+        /* height: 457px; */
+        float: left;
+        border-radius: 10px;
+        /* 溢出隐藏 */
+        overflow: hidden;
+        border: 1px solid #efefef;
+        margin-right: 30px;
+      }
+      .two-content .two-pic:last-child {
+        margin-right: 0;
+      }
+      .two-content-foot .info-right {
+        float: none;
+        width: 358px;
+        /* height: 209px; */
+        /* 上下32 左右30 */
+        padding: 4px 30px;
+        box-sizing: border-box;
+      }
+      .two-content-foot .info-right h3 {
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+      .three-content {
+        /* height: 690px; */
+        width: 100%;
+        border-bottom: 1px solid #efefef;
+      }
+      .three-content .inner {
+        /* height: 690px; */
+        overflow: hidden;
+      }
+      .three-content .three-content-left {
+        /* height: 690px; */
+        width: 266px;
+        float: left;
+      }
+      .three-content .three-content-left h3 {
+        margin-top: 128px;
+        font-size: 32px;
+        /* 去掉加粗 */
+        font-weight: normal;
+        margin-bottom: 14;
+      }
+      .three-content .three-content-left p {
+        line-height: 30px;
+        font-size: 16px;
+        color: #b1b1b1;
+      }
+      .three-content .three-content-center {
+        float: left;
+        width: 360px;
+        border-radius: 10px;
+        /* margin-right: 122px;
+        margin-left: 122px;
+        margin-top: 98px;
+        margin-bottom: 50px; */
+        /* 简写 上右下左 */
+        margin: 98px 122px 50px 122px;
+      }
+      .three-content .three-content-right {
+        float: right;
+        width: 264px;
+        /* height: 690px; */
+      }
+      .three-content .three-content-right p {
+        margin-top: 128px;
+        font-size: 14px;
+        color: #b1b1b1;
+        line-height: 30px;
+      }
+      .three-content .three-content-right a {
+        display: block;
+        width: 125px;
+        height: 45px;
+        border-radius: 5px;
+        background-color: #18ba60;
+        line-height: 45px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 38px;
+      }
+      .three-content .three-content-right a:hover {
+        background-color: #3b526b;
+      }
+      /* main中第四块 */
+      .four-content {
+        width: 100%;
+        /* height: 308px; */
+        background-image: url(./imges/parallax-1.jpg);
+        /* 全覆盖 */
+        background-size: cover;
+        /* 将图片铺到整个网页的后方 因为高度不够会重复 */
+        background-attachment: fixed;
+        /* 因为图片比较大，有高度限制，看不到图片中间部分 */
+        background-position: center center;
+        border-top: 1px solid #efefef;
+        /* overflow: hidden; */
+        padding-bottom: 100px;
+        /* 这个间距可以给inner 添加 margin-borrom 但是默认时不生效的 需要给inner 的父级添加oh才行 */
+        /* 也可以直接给 inner的父级添加padding-bottom */
+      }
+      .four-content .inner {
+        /* height: 308px; */
+        overflow: hidden;
+        /* margin-bottom: 100px; */
+      }
+      .four-content .number {
+        width: 160px;
+        /* height: 125px; */
+        /* background-color: #ccc; */
+        float: left;
+        margin-right: 166.66px;
+        margin-top: 92px;
+        /* 文本居中 */
+        text-align: center;
+      }
+      .four-content .number:last-child {
+        margin-right: 0;
+      }
+      .four-content .number h3 {
+        font-size: 40px;
+        color: #fff;
+        margin-bottom: 25px;
+        font-weight: normal;
+      }
+      .four-content .number p {
+        font-size: 18px;
+        color: #fff;
+      }
+      .five-content {
+        width: 100%;
+        height: 900px;
+        background-color: #f9f9f9;
+        padding-bottom: 40px;
+      }
+      .five-content .inner {
+        /* height: 900px; */
+      }
+      .five-content .five-content-nav {
+        /* 这是导航部分，其实可以不设置大小宽度默认和父级一样大 用内容（文字图片）撑起来就好 */
+        text-align: center;
+        margin-bottom: 22px;
+      }
+      .five-content .five-content-nav a {
+        color: #bcbbbb;
+        font-size: 14px;
+        text-decoration: none;
+      }
+      .five-content .five-content-nav a:first-child {
+        color: #18ba60;
+      }
+      .five-content .five-content-nav a:hover {
+        color: #18ba60;
+      }
+      .five-content .five-content-nav span {
+        font-size: 14px;
+        color: #bcbbbb;
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+      .five-content .five-content-pics {
+        width: 100%;
+        /* margin-bottom: 40px; */
+        /* height: 510px; */
+      }
+      /* .five-content .five-content-pics :first-child {
+        margin-bottom: 30px;
+      } */
+      .five-content .five-content-pics .pic {
+        /* 去图像的边框间距 */
+        /* display: block; */
+        float: left;
+        width: 360px;
+        height: 240px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        /* 溢出隐藏 */
+        overflow: hidden;
+      }
+      /* 第一个pic */
+      .five-content .five-content-pics .one {
+        background-image: url(./imges/pr1.jpg);
+      }
+      .five-content .five-content-pics .two {
+        background-image: url(./imges/pr2.jpg);
+      }
+      .five-content .five-content-pics .three {
+        background-image: url(./imges/pr3.jpg);
+      }
+      .five-content .five-content-pics .four {
+        background-image: url(./imges/pr4.jpg);
+      }
+      .five-content .five-content-pics .five {
+        background-image: url(./imges/pr5.jpg);
+      }
+      .five-content .five-content-pics .six {
+        background-image: url(./imges/pr8.jpg);
+      }
+      .five-content .five-content-pics .pic:last-child {
+        margin-right: 0;
+      }
+      .five-content .five-content-pics .pic .text {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        /* 透明背景色 */
+        /* 黑色 0，0，0.5 最后0.5代表透明度 */
+        background-color: rgba(0, 0, 0, 0.5);
+        /* 默认整体透明 划过之后出现不透明 */
+        opacity: 0;
+        /* 当划过变成不透明的时候需要添加一个时间 意思是当划过的时候 opscity 从0变1 需要 0.5s完成 */
+        transition: opacity 1s;
+        /* 因为 儿子加了margin-top出了bug 为了解决加的 */
+        overflow: hidden;
+      }
+      .five-content .five-content-pics .pic .text:hover {
+        opacity: 1;
+      }
+      .five-content .five-content-pics .pic .text h3 {
+        font-size: 24px;
+        margin-top: 80px;
+        font-weight: normal;
+        color: #fff;
+        line-height: normal;
+      }
+      .five-content .five-content-pics .pic .text p {
+        font-size: 14px;
+        color: #fff;
+      }
+      /* main的第六块 */
+      .six-content {
+        width: 100%;
+        /* height: 448px; */
+        background-image: url(./imges/parallax-4.jpg);
+        /* 全覆盖 */
+        background-size: cover;
+        /* 将图片铺到整个网页的后方 因为高度不够会重复 */
+        background-attachment: fixed;
+        /* 因为图片比较大，有高度限制，看不到图片中间部分 */
+        background-position: center center;
+        border-top: 1px solid #efefef;
+        padding-bottom: 80px;
+      }
+      .six-content .inner {
+        /* height: 448px; */
+        /* overflow: hidden; */
+      }
+      .six-content h2 {
+        font-size: 40px;
+        margin-top: 50px;
+        margin-bottom: 72px;
+        color: #fff;
+        font-weight: normal;
+        text-align: center;
+      }
+      .six-content .six-content-foot {
+        width: 100%;
+        overflow: hidden;
+      }
+      .six-content .six-content-foot .six-foot-content {
+        width: 528px;
+        /* height: 150px; */
+        float: left;
+      }
+      .six-content .six-content-foot .six-foot-content:last-child {
+        float: right;
+      }
+      .six-content .six-content-foot .six-foot-content img {
+        width: 80px;
+        border-radius: 50%;
+        float: left;
+      }
+      .six-content .six-content-foot .six-foot-content .user-info {
+        width: 418px;
+        /* height: 150px; */
+        float: right;
+      }
+      .six-content
+        .six-content-foot
+        .six-foot-content
+        .user-info
+        h3:first-child {
+        font-size: 16px;
+        color: #18ba60;
+        line-height: normal;
+      }
+      .six-content
+        .six-content-foot
+        .six-foot-content
+        .user-info
+        h3:nth-child(2) {
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 20px;
+        /* margin-top: 8px; */
+      }
+      .six-content .six-content-foot .six-foot-content .user-info p {
+        font-size: 14px;
+        color: #fff;
+        line-height: 26px;
+      }
+      .seven-content {
+        width: 100%;
+        /* height: 188px; */
+        padding-bottom: 80px;
+      }
+      .seven-content .inner {
+        /* height: 188px; */
+        overflow: hidden;
+      }
+      .seven-content img {
+        /* 去掉土坯那原本的间距 */
+        display: block;
+        width: 184px;
+        float: left;
+        margin-top: 66px;
+        margin-right: 55px;
+        /* 透明度 */
+        opacity: 0.5;
+        transition: opacity 0.5s;
+      }
+      .seven-content img:last-child {
+        margin-right: 0;
+      }
+      .seven-content img:hover {
+        opacity: 1;
+      }
+      /*footer样式开始*/
+      footer {
+        width: 100%;
+        /* height: 474px; */
+        /* background-color: #007fff; */
+      }
+      .foot-top {
+        /* height: 414px; */
+        background-color: #222222;
+        /* padding-bottom: 30px; */
+      }
+      .foot-top .inner {
+        /* height: 414px; */
+        overflow: hidden;
+      }
+      .foot-top .foot-top-one {
+        width: 262px;
+        /* height: 414px; */
+        float: left;
+        /* background-color: yellow; */
+        margin-right: 126px;
+      }
+      .foot-top .foot-top-one img {
+        margin-top: 50px;
+        margin-bottom: 24px;
+      }
+      .foot-top .foot-top-one p {
+        font-size: 14px;
+        color: #aaaa;
+        line-height: 30px;
+      }
+      .foot-top .foot-top-one ul {
+        /* 去掉列表符号 */
+        list-style: none;
+        margin-top: 14px;
+      }
+      .foot-top .foot-top-one ul li {
+        color: #fff;
+        font-size: 14px;
+        line-height: 40px;
+      }
+      .foot-top .foot-top-two {
+        width: 266px;
+        /* height: 414px; */
+        float: left;
+        /* background-color: yellow; */
+        margin-right: 28px;
+      }
+      .foot-top .foot-top-two h3 {
+        margin-top: 52px;
+        margin-bottom: 45px;
+        font-size: 20px;
+        color: #fff;
+        font-weight: normal;
+      }
+      .foot-top .foot-top-two div {
+        width: 266px;
+        /* height: 54px; */
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+      .foot-top .foot-top-two div:last-child {
+        margin-bottom: 0;
+      }
+      .foot-top .foot-top-two div img {
+        /* height: 54px; */
+        width: 65px;
+        border-radius: 4px;
+        float: left;
+        margin-bottom: 20px;
+        border-radius: 4px;
+      }
+      .foot-top .foot-top-two div img:last-child {
+        margin-bottom: 0;
+      }
+      .foot-top .foot-top-two div p {
+        /* 段落不给大小 默认可能占满 */
+        width: 188px;
+        /* height: 54px; */
+        font-size: 14px;
+        line-height: 20px;
+        float: right;
+        /* 鼠标经过手势 */
+        cursor: pointer;
+        color: #aaaa;
+      }
+      .foot-top .foot-top-three {
+        width: 100px;
+        /* height: 414px; */
+        float: left;
+        /* background-color: yellow; */
+        margin-right: 90px;
+      }
+      .foot-top .foot-top-three h3 {
+        margin-top: 52px;
+        margin-bottom: 45px;
+        font-size: 20px;
+        color: #fff;
+        font-weight: normal;
+      }
+      .foot-top .foot-top-three a {
+        /* 默认a横向排列 */
+        color: #fff;
+        font-size: 16px;
+        line-height: 30px;
+        /* 去下划线 */
+        text-decoration: none;
+      }
+      .foot-top .foot-top-three a:hover {
+        color: #18ba60;
+      }
+      .foot-top .foot-top-four {
+        width: 264px;
+        /* height: 414px; */
+        float: right;
+        /* background-color: yellow; */
+      }
+      .foot-top .foot-top-four h3 {
+        margin-top: 52px;
+        margin-bottom: 45px;
+        font-size: 20px;
+        color: #fff;
+        font-weight: normal;
+      }
+      .foot-top .foot-top-four div {
+        width: 261px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #fff;
+        overflow: hidden;
+      }
+      .foot-top .foot-top-four input {
+        /* 去掉边框 */
+        border: none;
+        width: 206px;
+        line-height: 40px;
+        font-size: 16px;
+        /* 首航缩进 */
+        text-indent: 5px;
+        /* 去掉选中时的蓝框 */
+        outline: none;
+        float: left;
+      }
+      .foot-top .foot-top-four a {
+        /* 让a可以写大小 */
+        display: block;
+        width: 54px;
+        height: 40px;
+        float: left;
+        background-color: #18ba60;
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        border-left: 1px solid #ccc;
+      }
+      .foot-top .foot-top-four a:hover {
+        background-color: #fff;
+        color: #ccc;
+      }
+      .foot-bottom {
+        /* height: 60px; */
+        width: 100%;
+        background-color: #1c1c1c;
+        padding: 10px 0;
+      }
+      .foot-bottom .inner {
+        overflow: hidden;
+      }
+      .foot-bottom .foot-bottom-left {
+        float: left;
+        width: 169px;
+        /* height: 60px; */
+        /* line-height: 60px; */
+        color: #fff;
+        font-size: 16px;
+      }
+      .foot-bottom .foot-bottom-left i {
+        margin-right: 10px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      .foot-bottom .foot-bottom-left i:hover {
+        color: #18ba60;
+      }
+      .foot-bottom p {
+        float: right;
+        color: #aaaaaa;
+        font-size: 13px;
+        /* line-height: 60px; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- html+css语法进行排版布局 -->
+    <!-- 结构（标签）+样式 -->
+    <!-- 结构划分：header(头部) +main(主体)+footer(底部) -->
+    <!-- <div class="hesder"></div> -->
+    <!-- header+.main+footer (带点 class)-->
+    <!-- 大结构默认竖向排列 -->
+
+    <!-- div header footer h1-h6 p 独立成行 -->
+    <!-- 可以使用float样式 不独立成行就是默认大小了-->
+    <!-- a 不独立成行 大小默认是里面内容的大小-->
+    <header>
+      <div class="header-top">
+        <!-- 主体部分 inner-->
+        <div class="inner">
+          <div class="header-top-info">
+            <!-- img -->
+            <!-- src路径 -->
+            <!-- <p><img src="images/0.jpg" alt=""></p> -->
+            <p>
+              <i class="iconfont icon-shijian"></i>
+              Time:Tusday-Monday:9:00am-6:00pm
+            </p>
+            <p><i class="iconfont icon-dianhua"></i> Phone:+1-23-456789</p>
+            <p>
+              <i class="iconfont icon-youxiang"></i> Email:example@email.com
+            </p>
+          </div>
+          <!-- 超链接 href 写的是地址 比如http:// -->
+          <!-- 超链接自带颜色和下划线 -->
+          <a href="http://www.baidu.com">Get a Quote</a>
+        </div>
+      </div>
+      <div class="header-mid">
+        <div class="inner">
+          <div class="logo">
+            <img src="./imges/logo.png" alt="" />
+          </div>
+
+          <!-- nav标签代表导航 href 写地址 不希望跳转写#号，但不能不填 -->
+          <!-- 有时候tab不会自动补齐 删除最后一个重新打在按就好 -->
+          <!-- ul+li组合叫列表 -->
+          <nav>
+            <ul>
+              <li>
+                <a class="first" href="#">HOME</a>
+              </li>
+              <li>
+                <a href="#"
+                  >ABOU<i class="iconfont icon-jiantou-copy-copy"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"
+                  >SERVICES<i class="iconfont icon-jiantou-copy-copy"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"
+                  >PROJECTS<i class="iconfont icon-jiantou-copy-copy"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"
+                  >BLOG<i class="iconfont icon-jiantou-copy-copy"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"
+                  >PAGES<i class="iconfont icon-jiantou-copy-copy"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"
+                  >CONTACT<i class="iconfont icon-jiantou-copy-copy"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide banner-one">
+              <div class="inner">
+                <h2
+                  class="ani"
+                  swiper-animate-effect="fadeInUp"
+                  swiper-animate-duration="1s"
+                >
+                  Courage is grace under pressure
+                </h2>
+                <p
+                  class="ani"
+                  swiper-animate-effect="fadeInLeft"
+                  swiper-animate-duration="1s"
+                >
+                  The starting point of any achievement is desire. Keep it
+                  constantly in your memory. Weak desires bring in weak results,
+                  just as a small amount of fire gives a small amount of heat.
+                </p>
+                <a
+                  href="#"
+                  class="ani"
+                  swiper-animate-effect="fadeInLeft"
+                  swiper-animate-duration="1s"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide banner-two">
+              <div class="inner">
+                <h2
+                  class="ani"
+                  swiper-animate-effect="fadeInUp"
+                  swiper-animate-duration="1.5s"
+                >
+                  You Can change the World
+                </h2>
+                <p
+                  class="ani"
+                  swiper-animate-effect="fadeInLeft"
+                  swiper-animate-duration="1s"
+                >
+                  Define your goals! Work to achieve them! Direct your thoughts,
+                  control emotions, act, and you will become the true creator of
+                  your destiny. You will find the answers you need if you look
+                  for them.
+                </p>
+                <a
+                  href="#"
+                  class="ani"
+                  swiper-animate-effect="fadeInLeft"
+                  swiper-animate-duration="1s"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide banner-three">
+              <div class="inner">
+                <h2
+                  class="ani"
+                  swiper-animate-effect="fadeInUp"
+                  swiper-animate-duration="1.5s"
+                >
+                  You Can, If You Believe You Can
+                </h2>
+                <p
+                  class="ani"
+                  swiper-animate-effect="fadeInLeft"
+                  swiper-animate-duration="1s"
+                >
+                  Define your goals! Work to achieve them! Direct your thoughts,
+                  control emotions, act, and you will become the true creator of
+                  your destiny. You will find the answers you need if you look
+                  for them.
+                </p>
+                <a
+                  href="#"
+                  class="ani"
+                  swiper-animate-effect="fadeInLeft"
+                  swiper-animate-duration="1s"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide banner-four">
+              <div class="inner">
+                <h2
+                  class="ani"
+                  swiper-animate-effect="fadeInUp"
+                  swiper-animate-duration="1.5s"
+                >
+                  Make Business Easy with us
+                </h2>
+                <p
+                  class="ani"
+                  swiper-animate-effect="fadeInLeft"
+                  swiper-animate-duration="1s"
+                >
+                  If people wanted to improve themselves instead of saving the
+                  whole world, if they tried to achieve inner freedom instead of
+                  liberating all of humanity, how much they would do for the
+                  real liberation of mankind..
+                </p>
+                <a
+                  href="#"
+                  class="ani"
+                  swiper-animate-effect="fadeInLeft"
+                  swiper-animate-duration="1s"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="swiper-pagination"></div>
+
+          <!-- 如果需要导航按钮 -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <div class="first-content">
+        <div class="inner">
+          <div class="content-head">
+            <h2>Let's make your own Business</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </p>
+            <p>incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="first-content-foot">
+            <div class="featue info">
+              <i class="iconfont icon-dengpao"></i>
+              <div class="info-right">
+                <h3>Many Features</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer adipiscing erat eget risus sollicitudin pellentesque
+                  et non erat.
+                </p>
+                <a href="">Read More></a>
+              </div>
+            </div>
+            <div class="analy info">
+              <i class="iconfont icon-63"></i>
+              <div class="info-right">
+                <h3>Analttics</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer adipiscing erat eget risus sollicitudin pellentesque
+                  et non erat.
+                </p>
+                <a href="">Read More></a>
+              </div>
+            </div>
+            <div class="custom info">
+              <i class="iconfont icon-zhiwen"></i>
+              <div class="info-right">
+                <h3>Customer Insights</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer adipiscing erat eget risus sollicitudin pellentesque
+                  et non erat.
+                </p>
+                <a href="">Read More></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="two-content">
+        <div class="inner">
+          <div class="content-head">
+            <h2>Our Services</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </p>
+            <p>incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="two-content-foot">
+            <div class="two-pic">
+              <img src="./imges/serv-9.jpg" alt="" />
+              <div class="info-right">
+                <h3>Business Advisor</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer adipiscing erat eget risus sollicitudin pellentesque
+                  et non erat.
+                </p>
+                <a href="">Read More></a>
+              </div>
+            </div>
+            <div class="two-pic">
+              <img src="./imges/serv-7.jpg" alt="" />
+              <div class="info-right">
+                <h3>Financial Planning</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer adipiscing erat eget risus sollicitudin pellentesque
+                  et non erat.
+                </p>
+                <a href="">Read More></a>
+              </div>
+            </div>
+            <div class="two-pic">
+              <img src="./imges/serv-10.jpg" alt="" />
+              <div class="info-right">
+                <h3>Social Marketing</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer adipiscing erat eget risus sollicitudin pellentesque
+                  et non erat.
+                </p>
+                <a href="">Read More></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="three-content">
+        <div class="inner">
+          <div class="three-content-left">
+            <h3>We are creative company</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </p>
+          </div>
+          <img src="./imges/team.jpg" alt="" class="three-content-center" />
+          <div class="three-content-right">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </p>
+            <a href="">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="four-content">
+        <div class="inner">
+          <!-- (.number*4>h3+p  tab) -->
+          <div class="number">
+            <h3 class="counter">1200</h3>
+            <p>Hours Of Work</p>
+          </div>
+          <div class="number">
+            <h3 class="counter">500</h3>
+            <p>Complete Project</p>
+          </div>
+          <div class="number">
+            <h3 class="counter">100</h3>
+            <p>Happy Clients</p>
+          </div>
+          <div class="number">
+            <h3 class="counter">20</h3>
+            <p>Awards</p>
+          </div>
+        </div>
+      </div>
+      <div class="five-content">
+        <div class="inner">
+          <div class="content-head">
+            <h2>Latest Projects</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </p>
+            <p>incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="five-content-foot">
+            <!-- 导航 -->
+            <div class="five-content-nav">
+              <!-- href="javascript:;"阻止超链接功能 -->
+              <a class="all" href="javascript:;">Show all/ </a>
+              <span></span>
+              <a class="a" href="javascript:;">Financical/</a>
+              <span></span>
+              <a class="b" href="javascript:;">Business/</a>
+              <span></span>
+              <a class="c" href="javascript:;">Marketing</a>
+            </div>
+            <!-- 图片 -->
+            <div class="five-content-pics">
+              <!-- 使用isotope 实现图片筛选效果 那么five-content-pics -->
+
+              <!-- <img src="./imges/pr1.jpg" alt="" />
+                <img src="./imges/pr2.jpg" alt="" />
+                <img src="./imges/pr3.jpg" alt="" /> -->
+              <!-- 将图片当做背景 -->
+              <!-- .pic*3>div.text>h3+p tab -->
+              <div class="element-item pic one bb">
+                <div class="text">
+                  <h3>Designing</h3>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+              </div>
+              <div class="element-item pic two bb">
+                <div class="text">
+                  <h3>Development</h3>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+              </div>
+              <div class="element-item pic three aa">
+                <div class="text">
+                  <h3>Making Money</h3>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+              </div>
+
+              <!-- <img src="./imges/pr4.jpg" alt="" />
+                <img src="./imges/pr5.jpg" alt="" />
+                <img src="./imges/pr8.jpg" alt="" /> -->
+              <div class="element-item pic four aa">
+                <div class="text">
+                  <h3>Programming</h3>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+              </div>
+              <div class="element-item pic five cc">
+                <div class="text">
+                  <h3>Amazing</h3>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+              </div>
+              <div class="element-item pic six aa">
+                <div class="text">
+                  <h3>Fashion</h3>
+                  <p>Lorem ipsum dolor sit amet</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="six-content">
+        <div class="inner">
+          <h2>What our Clients Say</h2>
+          <div class="six-content-foot">
+            <div class="six-foot-content">
+              <img src="./imges/member1.jpg" alt="" />
+              <div class="user-info">
+                <h3>Web Developer</h3>
+                <h3>Martin Harris</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                </p>
+              </div>
+            </div>
+            <div class="six-foot-content">
+              <img src="./imges/member2.jpg" alt="" />
+              <div class="user-info">
+                <h3>Designer</h3>
+                <h3>Ann Hill</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="seven-content">
+        <div class="inner">
+          <img src="./imges/part-1.png" alt="" />
+          <img src="./imges/part-2.png" alt="" />
+          <img src="./imges/part-3.png" alt="" />
+          <img src="./imges/part-4.png" alt="" />
+          <img src="./imges/part-5.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="foot-top">
+        <div class="inner">
+          <!-- .foot-top-one+.foot-top-two+.foot-top-three+.foot-top-four +同级 -->
+          <div class="foot-top-one">
+            <img src="./imges/logo-2.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet, ad per sint graece, vix quod nusquam
+              ea.
+            </p>
+            <ul>
+              <li>E-mail: example@mail.com</li>
+              <li>Phone: +1-23-456789</li>
+              <li>Time: Tus-Mon : 9:00am-6:00pm</li>
+              <li>Map: Sheram 113</li>
+            </ul>
+          </div>
+          <div class="foot-top-two">
+            <h3>RECENT POSTS</h3>
+            <!-- div*3>img+p -->
+            <div>
+              <img src="./imges/footer-post-1.jpg" alt="" />
+              <p>Lorem ipsum dolor sit amet, ad per sint graece</p>
+            </div>
+            <div>
+              <img src="./imges/footer-post-2.jpg" alt="" />
+              <p>Lorem ipsum dolor sit amet, ad per sint graece</p>
+            </div>
+            <div>
+              <img src="./imges/footer-post-3.jpg" alt="" />
+              <p>Lorem ipsum dolor sit amet, ad per sint graece</p>
+            </div>
+          </div>
+          <div class="foot-top-three">
+            <h3>LINKS</h3>
+            <a href="">HOME</a>
+            <a href="">SERVICES</a>
+            <a href="">PAGES</a>
+            <a href="">BLOG</a>
+            <a href="">PORTFOLIO</a>
+          </div>
+          <div class="foot-top-four">
+            <h3>Newsletter</h3>
+            <!-- 输入框比较复杂 -->
+            <div>
+              <!-- 在输入框内显示提示文字 -->
+              <input placeholder="Your Email" type="" />
+              <a href="">搜索</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div class="inner">
+          <div class="foot-bottom-left">
+            <i class="iconfont icon-facebook"></i>
+            <i class="iconfont icon-twitter"></i>
+            <i class="iconfont icon-Instagram"></i>
+            <i class="iconfont icon-pinterest-fill"></i>
+          </div>
+          <p>
+            <span style="font-family: arial">©</span> Copyright 2017 SpecThemes.
+            All Rights reserved
+          </p>
+        </div>
+      </div>
+      <a href="#"></a>
+    </footer>
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script src="./js/jquery.countup.min.js"></script>
+    <script src="./js/jquery.waypoints.min.js"></script>
+    <script src="./js/isotope.pkgd.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/swiper.animate1.0.3.min.js"></script>
+    <script>
+      // $(".counter").countUp({ delay:1000, time:100});
+      // delay是延迟动画 time动画持续时间 单位毫秒
+      $(".counter").countUp();
+      // 默认展示 five-content-pics 的所有isotope的 element-item 小模块
+      $(".five-content-pics").isotope({ filter: "*" });
+      // 当你点击图片导航的时候重新筛选新的类别展示
+      // 绑定待机时间对图片的类型进行筛选
+      // 当你点击了对应的 a 的导航的时候需要变绿，其他的变灰
+      $(".all").click(function () {
+        $(".five-content-pics").isotope({ filter: "*" });
+        // 将all 的color变成18ba60，将其兄弟a就是其他导航 color变成#bcbbbb
+        $(".all").css("color", "#18ba60").siblings("a").css("color", "#bcbbbb");
+      });
+
+      $(".a").click(function () {
+        $(".five-content-pics").isotope({ filter: ".aa" });
+        $(".a").css("color", "#18ba60").siblings("a").css("color", "#bcbbbb");
+      });
+
+      $(".b").click(function () {
+        $(".five-content-pics").isotope({ filter: ".bb" });
+        $(".b").css("color", "#18ba60").siblings("a").css("color", "#bcbbbb");
+      });
+
+      $(".c").click(function () {
+        $(".five-content-pics").isotope({ filter: ".cc" });
+        $(".c").css("color", "#18ba60").siblings("a").css("color", "#bcbbbb");
+      });
+
+      var mySwiper = new Swiper(".swiper-container", {
+        loop: true, // 循环模式选项
+
+        // 如果需要分页器
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
+
+        // 如果需要前进后退按钮
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        on: {
+          init: function () {
+            swiperAnimateCache(this); //隐藏动画元素
+            swiperAnimate(this); //初始化完成开始动画
+          },
+          slideChangeTransitionEnd: function () {
+            swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+            //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

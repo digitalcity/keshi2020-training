@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <!--页面标题左侧的小  logo  -->
+    <!--百度搜索 ico制作 即可-->
+    <link rel="shortcut icon" href="./IMG/favicon.ico" type="image/x-icon" />
+    <!--若选取图片部分 用 ps 切图
+      先使用魔棒工具选中想要切的图 使用 （Shift + 魔棒）清空内层选区
+
+    使用切片工具选中想要切的部分 ctrl+shift+alt+s 保存切得图片 保存的时候弹出的面板选择图片格式必须是png-24或 gif 选择好了之后其他的不需要处理，直接点击下方的存储按钮。弹出选择位置的窗口，选桌面，然后切片选项改成选中的切片 点击保存即可-->
+    <link
+      rel="stylesheet"
+      href="http://at.alicdn.com/t/font_2206195_och37l0b16.css"
+    />
+    <link rel="stylesheet" href="./CSS/animate.min.css">
+    <link rel="stylesheet" href="./CSS/swiper.min.css">
+
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      @font-face {
+        font-family: myfont;
+        src: url(./Fonts/fontawesome-webfont.eot),
+          url(./Fonts/fontawesome-webfont.svg),
+          url(./Fonts/fontawesome-webfont.ttf),
+          url(./Fonts/fontawesome-webfont.woff);
+      }
+      /* 页面的排版布局一般不设置高度 并不所有高度都不设置 酌情处理*/
+      body {
+        font-family: myfont;
+      }
+      header {
+        width: 100%;
+        /* height: 657px;*/
+        /* background-color: #3b526b;*/
+      }
+      .header-top {
+        width: 100%;
+        height: 51px;
+        background-color: #3b526b;
+      }
+      .header-top .inner {
+        height: 51px;
+      }
+      .inner {
+        width: 1140px;
+        /* background-color: #3b526b;*/
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .top-info {
+        width: 656px;
+        height: 51px;
+        /* background-color: g#3b526b;*/
+        float: left;
+      }
+      .top-info p {
+        line-height: 51px;
+        float: left;
+        font-size: 12px;
+        color: #fff;
+        margin-right: 14px;
+      }
+      .top-info p i {
+        font-size: 18px;
+        color: #18ba60;
+      }
+      .header-top a {
+        width: 131px;
+        height: 51px;
+        display: biock;
+        background-color: #18ba60;
+        float: right;
+        color: #fff;
+        font-size: 14px;
+        line-height: 51px;
+        text-align: center;
+        text-decoration: none;
+      }
+      .header-mid {
+        width: 100%;
+        background-color: #fff;
+      }
+      .header-mid .inner {
+        /* inner 的高度去掉之后 由于两个儿子浮动了 父级撑不起来高 需要处理*/
+        /*  height: 100px;*/
+        /* 方案一： 给父级加 overflow:hidden
+        方案二： 给 logo 加 margin-bottom */
+        overflow: hidden;
+      }
+      .header-mid .logo {
+        float: left;
+        width: 168px;
+        margin-top: 24px;
+        margin-bottom: 20px;
+      }
+      .header-mid .logo img {
+        width: 100%;
+      }
+      .header-mid nav {
+        float: right;
+        width: 730px;
+        height: 100px;
+        /* background-color: #ccc;*/
+      }
+      /*列表样式*/
+      /* 列表样式 li 默认竖向排列 */
+      /* 每一个列表项前面都会有列表符号 默认是小圆点 disc */
+      /* 想要列表向横向排列 需要给 所有li添加 float */
+      .header-mid nav ul {
+        list-style: none;
+      }
+      .header-mid nav ul li {
+        float: left;
+      }
+      .header-mid nav ul li a {
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+        display: block;
+        padding-left: 15px;
+        padding-right: 15px;
+        /*width: 100px;*/
+        height: 50px;
+        line-height: 50px;
+        margin-top: 25px;
+        /* border: 1px solid red;*/
+      }
+      .first {
+        color: #18ba60;
+      }
+      .header-mid nav ul li a:hover {
+        color: #18ba60;
+      }
+      .header-mid nav ul li .first {
+        color: #18ba60;
+      }
+      .header-mid nav ul li a i {
+        font-size: 12px;
+        display: block;
+        transform: scale(0.7);
+        float: right;
+      }
+      .banner {
+        width: 100%;
+        height: 506px;
+        /*background-color: rgb(245, 178, 178);*/
+       /* background-image: url(./IMG/banner.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;*/
+      }
+      .banner .swiper-container {
+        width: 100%;
+        height: 506px;
+      }
+      .banner .banner-one {
+        background-image: url(./IMG/banner.jpg);
+      }
+      .banner .banner-two {
+        background-image: url(./IMG/slide-2.jpg);
+      }
+      .banner .banner-three {
+        background-image: url(./IMG/slide-3.jpg);
+      }
+      .banner .banner-four {
+        background-image: url(./IMG/slide-4.jpg);
+      }
+      .banner .swiper-slide{
+        padding-top:100px ;
+       /* padding-left: 40px;
+        padding-right: 300px;*/
+        box-sizing: border-box;
+      }
+      .swiper-button-prev:after ,
+      .swiper-button-next:after{
+       font-size: 26px;
+       color: #fff;
+       font-weight: bold;
+      }
+      .banner .swiper-pagination-progressbar-fill{
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      .banner .swiper-slide h2 {
+       line-height: 150px;
+       color: #fff;
+       font-size: 50px;
+       font-weight: normal;
+
+      }
+      .banner .swiper-slide p{
+        color: #fff;
+        font-size: 24px;
+        line-height: 150%;
+        margin-top: 20px;
+      }
+      .banner .swiper-slide a{
+        display: block;
+        width: 125px;
+        height: 45px;
+        border-radius: 5px;
+        background-color: #18ba60;
+        line-height: 45px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 38px;
+      }
+      .banner .swiper-slide a:hover {
+        background-color: #3b526b;
+      }
+      .main {
+        width: 100%;
+        /* height: 4123px;*/
+        /* background-color: #25687c;*/
+      }
+      .first-content {
+        width: 100%;
+        /* height: 673px;*/
+        background-color: #fff;
+      }
+      .first-content .inner {
+        /* height: 673px;*/
+        background-color: #fff;
+      }
+      /*第一块的头*/
+      .first-content-head {
+        width: 100%;
+        /*height: 282px;*/
+        background-color: #fff;
+        text-align: center;
+        overflow: hidden;
+        margin-bottom: 50px;
+      }
+      .first-content-head h2 {
+        font-size: 34px;
+        font-weight: normal;
+        margin-top: 108px;
+        margin-bottom: 22px;
+      }
+      .first-content-head p {
+        font-size: 16px;
+        line-height: 30px;
+        color: #b5bdc5;
+      }
+      /*第一块底*/
+      .first-content .first-content-foot {
+        width: 100%;
+        overflow: hidden;
+        /* height: 391px;*/
+        /*background-color: red;*/
+        margin-bottom: 100px;
+      }
+      .first-content .first-content-foot .info {
+        width: 358px;
+        /* height: 222px;*/
+        /* background-color: seagreen;*/
+        border: 1px solid #e6e6e6;
+        float: left;
+        margin-right: 30px;
+        /*圆润*/
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 23px;
+      }
+      .first-content .first-content-foot .info:last-child {
+        margin-right: 0;
+      }
+      .first-content .first-content-foot .info i {
+        float: left;
+        font-size: 50px;
+      }
+      .info-right {
+        width: 248px;
+        /* height: 174px;*/
+        float: right;
+      }
+      .info-right h3 {
+        font-size: 24px;
+        font-weight: normal;
+        color: #a3d4e7;
+      }
+      .info-right p {
+        font-size: 14px;
+        line-height: 30px;
+        color: #b5bdc5;
+        margin-bottom: 16px;
+      }
+      .info-right a {
+        color: #22ba60;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      /*第二块内容*/
+      .two-content {
+        border-top: 1px solid #efefef;
+        /* height: 862px;*/
+        background-color: #fff;
+      }
+      
+    
+      .two-content .two-content-foot {
+        overflow: hidden;
+        margin-bottom: 120px;
+      }
+      .two-content .two-pic {
+        width: 358px;
+       /* height: 447px;*/
+        float: left;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #efefef;
+        margin-right: 30px;
+      }
+      .two-content .two-pic:last-child {
+        margin-right: 0;
+      }
+      .two-content .info-right {
+        float: none;
+        width: 358px;
+        height: 209px;
+        padding: 32px 30px;
+        box-sizing: border-box;
+      }
+      .two-content .info-right h3 {
+        font-size: 20px;
+        margin-bottom: 14px;
+      }
+      /*main 第三块内容*/
+      .three-content {
+        width: 100%;
+        /*height: 690px;*/
+        border-top: 1px solid #efefef;
+      }
+      .three-content .inner {
+        /* height: 690px;*/
+        overflow: hidden;
+      }
+      .three-content .three-content-left {
+        width: 266px;
+        /*height: 690px;*/
+        float: left;
+      }
+      .three-content .three-content-left h3 {
+        margin-top: 128px;
+        font-size: 32px;
+        font-weight: normal;
+        margin-bottom: 14px;
+      }
+      .three-content .three-content-left p {
+        line-height: 30px;
+        font-size: 16px;
+        color: #b1b1b1;
+      }
+      .three-content .three-content-center {
+        float: left;
+        width: 360px;
+        border-radius: 10px;
+        margin-left: 122px;
+        margin-right: 128px;
+        margin-top: 98px;
+      }
+      .three-content .three-content-right {
+        width: 264px;
+        height: 690px;
+        float: left;
+      }
+      .three-content .three-content-right p {
+        margin-top: 128px;
+        font-size: 14px;
+        color: #b1b1b1;
+        line-height: 30px;
+      }
+      .three-content .three-content-right a {
+        display: block;
+        width: 125px;
+        height: 45px;
+        border-radius: 5px;
+        background-color: #18ba60;
+        line-height: 45px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 38px;
+      }
+      .three-content .three-content-right a:hover {
+        background-color: #3b526b;
+      }
+      /*main 第四块*/
+      .four-content {
+        /* height: 308px;*/
+        width: 100%;
+        background-image: url(./IMG/parallax-1.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center center;
+        border-top: 1px soild #efefef;
+        /* 这间距可以给 inner 添加 margin-bottom 但是默认不生效 需要给 inner 的 父级加 oh 才行*/
+        /* 也可以直接在 inner 的父级加 padding-bottom */
+        /*  overflow: hidden;*/
+        padding-bottom: 100px;
+      }
+      .four-content .inner {
+        /*  height: 308px;*/
+        overflow: hidden;
+        margin-bottom: 80px;
+      }
+      .four-content .number {
+        width: 160px;
+        /* height: 125px;*/
+        /*  background-color: #ccc;*/
+        float: left;
+        margin-right: 166.66px;
+        margin-top: 92px;
+        text-align: center;
+      }
+      .four-content .number:last-child {
+        margin-right: 0%;
+      }
+      .four-content .number h3 {
+        font-size: 40px;
+        color: #fff;
+        margin-top: 10px;
+        margin-bottom: 25px;
+      }
+      .four-content .number p {
+        font-size: 18px;
+        color: #fff;
+      }
+      /* main 的第五块*/
+      .five-content {
+        width: 100%;
+        /* height: 900px;*/
+        background-color: #fff;
+        padding-bottom: 40px;
+      }
+      .five-content .inner {
+        /* height: 900px;*/
+        overflow: hidden;
+      }
+      .five-content .five-content-nav {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+      .five-content .five-content-nav a {
+        color: #bcbbbb;
+        font-style: 14px;
+        text-decoration: none;
+      }
+      .five-content .five-content-nav a:first-child {
+        color: #18ba60;
+      }
+      .five-content .five-content-nav a:hover {
+        color: #18ba60;
+      }
+      .five-content .five-content-nav span {
+        font-size: 14px;
+        color: #bcbbbb;
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+      .five-content .five-content-pics {
+        width: 100%;
+        /* height: 510px;*/
+      }
+      .five-content .five-content-pics  {
+        width: 100%;
+        height: 240px;
+      }
+      .five-content .five-content-pics :first-child {
+        margin-bottom: 30px;
+      }
+      .five-content .five-content-pics  .pic {
+        overflow: hidden;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        width: 360px;
+        height: 240px;
+      }
+      .five-content .five-content-pics .one {
+        background-image: url(./IMG/pr1.jpg);
+      }
+      .five-content .five-content-pics  .two {
+        background-image: url(./IMG/pr2.jpg);
+      }
+      .five-content .five-content-pics  .three {
+        background-image: url(./IMG/pr3.jpg);
+      }
+      .five-content .five-content-pics .four {
+        background-image: url(./IMG/pr4.jpg);
+      }
+      .five-content .five-content-pics .five {
+        background-image: url(./IMG/pr5.jpg);
+      }
+      .five-content .five-content-pics  .six {
+        background-image: url(./IMG/pr6.jpg);
+      }
+      .five-content .five-content-pics .pic:last-child {
+        margin-right: 0;
+      }
+      .five-content .five-content-pics  .pic .text {
+        width: 100%;
+        height: 100%;
+        /* 透明背景色 */
+        /* 黑色 0,0,0,0.5  最后0.5 代表透明度*/
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 1s;
+        text-align: center;
+        overflow: hidden;
+        color: #fff;
+      }
+      .five-content .five-content-pics  .pic .text:hover {
+        opacity: 1;
+      }
+      .five-content .five-content-pics  .pic .text h3 {
+        font-size: 30px;
+        margin-top: 70px;
+        font-weight: normal;
+      }
+      .five-content .five-content-pics .pic .text p {
+        font-size: 16px;
+        margin-top: 20px;
+      }
+      .six-content {
+        /* height: 448px;*/
+        width: 100%;
+        background-image: url(./IMG/parallax-4.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center center;
+        border-top: 1px soild #efefef;
+        padding-bottom: 80px;
+      }
+      .six-content .inner {
+        /* height: 448px;*/
+        overflow: hidden;
+      }
+      .six-content h2 {
+        font-size: 40px;
+        margin-top: 50px;
+        margin-bottom: 72px;
+        color: #fff;
+        font-weight: normal;
+        text-align: center;
+      }
+      .six-content .six-content-foot {
+        width: 100%;
+        overflow: hidden;
+      }
+      .six-content .six-content-foot .six-foot-content {
+        width: 528px;
+        height: 150px;
+        float: left;
+      }
+      .six-content .six-content-foot .six-foot-content:last-child {
+        float: right;
+      }
+      .six-content .six-content-foot .six-foot-content img {
+        width: 80px;
+        border-radius: 50%;
+        float: left;
+      }
+      .six-content .six-content-foot .six-foot-content .user-info {
+        width: 418px;
+        height: 150px;
+        float: right;
+      }
+      .six-content
+        .six-content-foot
+        .six-foot-content
+        .user-info
+        h3:first-child {
+        font-size: 18px;
+        color: #18ba60;
+      }
+      .six-content
+        .six-content-foot
+        .six-foot-content
+        .user-info
+        h3:nth-child(2) {
+        font-size: 18px;
+        color: #fff;
+        margin-top: 8px;
+        margin-bottom: 26px;
+      }
+      .six-content .six-content-foot .six-foot-content .user-info p {
+        font-size: 16px;
+        color: #fff;
+        line-height: 26px;
+      }
+      .seven-content {
+        width: 100%;
+        /* height: 188px;*/
+        padding-bottom: 80px;
+      }
+      .seven-content .inner {
+        /* height: 188px;*/
+        overflow: hidden;
+      }
+      .seven-content img {
+        display: block;
+        width: 184px;
+        float: left;
+        margin-top: 66px;
+        margin-right: 55px;
+        opacity: 0.5;
+        transition: opacity 0.5s;
+      }
+      .seven-content img:last-child {
+        margin-right: 0%;
+      }
+      .seven-content img:hover {
+        opacity: 1;
+      }
+      footer {
+        width: 100%;
+        /* height: 473px;*/
+        background-color: #a3d4e7;
+      }
+      .foot-top {
+        /*  height: 414px;*/
+        background-color: #222222;
+      }
+      .foot-top .inner {
+        /* height: 414px;*/
+        overflow: hidden;
+      }
+      .foot-top .foot-top-one {
+        width: 262px;
+        height: 414px;
+        float: left;
+        /* background-color: yellow;*/
+        margin-right: 126px;
+      }
+      .foot-top .foot-top-one img {
+        margin-top: 50px;
+        margin-bottom: 24px;
+      }
+      .foot-top .foot-top-one p {
+        font-size: 14px;
+        color: #aaaaaa;
+        line-height: 30px;
+      }
+      .foot-top .foot-top-one ul {
+        list-style: none;
+        margin-top: 14px;
+      }
+      .foot-top .foot-top-one ul li {
+        color: #fff;
+        font-size: 14px;
+        line-height: 40px;
+      }
+      .foot-top .foot-top-two {
+        width: 262px;
+        /* height: 414px;*/
+        float: left;
+        /*background-color: rgb(189, 93, 152);*/
+        margin-right: 28px;
+      }
+      .foot-top .foot-top-two h3 {
+        margin-top: 52px;
+        margin-bottom: 45px;
+        font-size: 20px;
+        color: #fff;
+        font-weight: normal;
+      }
+      .foot-top .foot-top-two div {
+        width: 262px;
+        /* height: 54px;*/
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+      .foot-top .foot-top-two div:last-child {
+        margin-bottom: 0;
+      }
+      .foot-top .foot-top-two div img {
+        height: 54px;
+        float: left;
+        border-radius: 5px;
+      }
+      .foot-top .foot-top-two div p {
+        font-size: 14px;
+        width: 188px;
+        /* height: 54px;*/
+        color: #aaaaaa;
+        float: right;
+        line-height: 22px;
+        /* 鼠标经过的手势 */
+        cursor: pointer;
+      }
+      .foot-top .foot-top-three {
+        width: 100px;
+        /* height: 414px;*/
+        float: left;
+        /*background-color: rgb(0, 247, 255);*/
+        margin-right: 90px;
+      }
+      .foot-top .foot-top-three h3 {
+        margin-top: 52px;
+        margin-bottom: 45px;
+        font-size: 20px;
+        color: #fff;
+        font-weight: normal;
+      }
+      .foot-top .foot-top-three a {
+        font-size: 16px;
+        line-height: 30px;
+        color: #fff;
+        text-decoration: none;
+      }
+      .foot-top .foot-top-three a:hover {
+        color: #18ba60;
+      }
+      .foot-top .foot-top-four {
+        width: 264px;
+        /* height: 414px;*/
+        float: left;
+        /*  background-color: rgb(0, 255, 55);*/
+      }
+      .foot-top .foot-top-four h3 {
+        margin-top: 52px;
+        margin-bottom: 45px;
+        font-size: 20px;
+        color: #fff;
+        font-weight: normal;
+      }
+      .foot-top .foot-top-four div {
+        width: 261px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #fff;
+        overflow: hidden;
+      }
+      .foot-top .foot-top-four input {
+        border: none;
+        width: 206px;
+        line-height: 40px;
+        font-size: 16px;
+        text-indent: 10px;
+        outline: none;
+        float: left;
+      }
+      .foot-top .foot-top-four a {
+        display: block;
+        width: 54px;
+        float: right;
+        height: 40px;
+        background-color: #18ba60;
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        font-size: 14px;
+        text-decoration: none;
+        border-left: 1px solid #ccc;
+      }
+      .foot-top .foot-top-four a:hover {
+        background-color: #fff;
+        color: #ccc;
+      }
+      .foot-bottom {
+        width: 100%;
+        /* height: 60px;*/
+        background-color: #1c1c1c;
+        padding-bottom: 20px;
+      }
+      .foot-bottom .foot-bottom-left {
+        float: left;
+        width: 160px;
+        /* height: 60px;
+        line-height: 60px;*/
+        color: #fff;
+        font-size: 16px;
+      }
+      .foot-bottom .foot-bottom-left i {
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      .foot-bottom .foot-bottom-left i:hover {
+        color: #18ba60;
+      }
+      .foot-bottom p {
+        float: right;
+        color: #aaaaaa;
+        font-size: 14px;
+        /* line-height: 60px;*/
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div class="inner">
+          <div class="top-info">
+            <p>
+              <i class="iconfont icon-shijian"></i
+              >Time:Tusday-Monday:9:00am.-6:00pm
+            </p>
+            <p><i class="iconfont icon-icon_dianhua"></i>Phone:+1-23-456789</p>
+            <p><i class="iconfont icon-youxiang"></i>Email:@email.com</p>
+          </div>
+          <!--a+Tab-->
+          <!---->
+
+          <a href="http://www.baidu.com">Get a Quote</a>
+        </div>
+      </div>
+      <div class="header-mid">
+        <div class="inner">
+          <div class="logo">
+            <img src="./IMG/logo.png" alt="" />
+          </div>
+          <nav>
+            <ul>
+              <li><a class="first" href="#1">HOME</a></li>
+              <li>
+                <a href="#2"
+                  >ABOUT<i class="iconfont icon-jiantouarrow483"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#3"
+                  >SERVICES<i class="iconfont icon-jiantouarrow483"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#4"
+                  >PROJECTS<i class="iconfont icon-jiantouarrow483"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#5"
+                  >BLOG<i class="iconfont icon-jiantouarrow483"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#6"
+                  >PAGES<i class="iconfont icon-jiantouarrow483"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#7"
+                  >CONTACT<i class="iconfont icon-jiantouarrow483"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="banner"> 
+        <div class="swiper-container">
+        <div class="swiper-wrapper">
+         <div class="swiper-slide banner-one">
+          <div class="inner">
+            <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" >You Can change the World</h2>
+            <p>Define your goals! Work to achieve them! Direct your thoughts, control emotions, act, and you will become the true creator of your destiny. You will find the answers you need if you look for them.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+         <div class="swiper-slide banner-two">
+           <div class="inner">
+           <h2 class="ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" 
+           >
+           Courage is grace under pressure</h2>
+          <p>
+            The starting point of any achievement is desire. Keep it constantly in your memory. Weak desires bring in weak results, just as a small amount of fire gives a small amount of heat.
+          </p>
+          <a href="#">Read More</a>
+        </div>
+        </div>
+         <div class="swiper-slide banner-three">
+           <div class="inner">
+           <h2  class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">Make Business Easy with us</h2>
+          <p>
+           If people wanted to improve themselves instead of saving the whole world, if they tried to achieve inner freedom instead of liberating all of humanity, how much they would do for the real liberation of mankind..
+          </p>
+          <a href="#">Read More</a>
+         </div>
+         </div>
+         <div class="swiper-slide banner-four">
+          <div class="inner">
+           <h2  class="ani" swiper-animate-effect="swing" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">You Can, If You Believe You Can</h2>
+           <p>
+           Every failure is a blessing hidden under the mask, provided that it teaches something that a person would not otherwise learn. Most of the so-called failures are just a temporary defeat.
+           </p>
+           <a href="#">Read More</a>
+         </div>
+         </div>
+        </div>
+    <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    
+    <!-- 如果需要导航按钮 -->
+       <div class="swiper-button-prev"></div>
+       <div class="swiper-button-next"></div>
+    
+      
+</div>
+      </div>
+    </header>
+    <div class="main">
+      <div class="first-content">
+        <div class="inner">
+          <div class="first-content-head">
+            <h2>Let's make your own Business</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit,sed do
+              eiusmod temper
+            </p>
+            <p>incididunt ut Iabore et dolore magna aliqua.</p>
+          </div>
+          <div class="first-content-foot">
+            <div class="feature info">
+              <i class="iconfont icon-ziyuan"></i>
+              <div class="info-right">
+                <h3>Many Feature</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer adipiscing erat eget risus sollicitudin pellentesque
+                  et non erat.
+                </p>
+                <a href="#">Read More ></a>
+              </div>
+            </div>
+            <div class="analy info">
+              <i class="iconfont icon-ziyuan"></i>
+              <div class="info-right">
+                <h3>Analytics</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer adipiscing erat eget risus sollicitudin pellentesque
+                  et non erat.
+                </p>
+                <a href="#">Read More ></a>
+              </div>
+            </div>
+            <div class="custom info">
+              <i class="iconfont icon-ziyuan"></i>
+              <div class="info-right">
+                <h3>Customer Insights</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer adipiscing erat eget risus sollicitudin pellentesque
+                  et non erat.
+                </p>
+                <a href="#">Read More ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="two-content">
+        <div class="inner">
+          <div class="first-content-head">
+            <h2>Let's make your own Business</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit,sed do
+              eiusmod temper
+            </p>
+            <p>incididunt ut Iabore et dolore magna aliqua.</p>
+          </div>
+          <div class="two-content-foot">
+            <div class="two-pic">
+              <img src="./IMG/serv-7.jpg" alt="" />
+              <div class="info-right">
+                <h3>Business Advisor</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer adipiscing erat eget risus sollicitudin pellentesque
+                  et non erat.
+                </p>
+                <a href="#">Read More ></a>
+              </div>
+            </div>
+            <div class="two-pic">
+              <img src="./IMG/serv-9.jpg" alt="" />
+              <div class="info-right">
+                <h3>Business Advisor</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer adipiscing erat eget risus sollicitudin pellentesque
+                  et non erat.
+                </p>
+                <a href="#">Read More ></a>
+              </div>
+            </div>
+            <div class="two-pic">
+              <img src="./IMG/serv-10.jpg" alt="" />
+              <div class="info-right">
+                <h3>Business Advisor</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Integer adipiscing erat eget risus sollicitudin pellentesque
+                  et non erat.
+                </p>
+                <a href="#">Read More ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="three-content">
+        <div class="inner">
+          <div class="three-content-left">
+            <h3>We are creative company</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </p>
+          </div>
+          <img src="./IMG/2.jpg" alt="" class="three-content-center" />
+          <div class="three-content-right">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </p>
+            <a href=""> Read More></a>
+          </div>
+        </div>
+      </div>
+      <!--main 第四部分-->
+      <div class="four-content">
+        <div class="inner">
+          <!--.number*4>h3+p TAB-->
+          <div class="number">
+            <h3 class="counter">1200</h3>
+            <p>Hours Of Work</p>
+          </div>
+          <div class="number">
+            <h3 class="counter">500</h3>
+            <p>Complete Project</p>
+          </div>
+          <div class="number">
+            <h3 class="counter">100</h3>
+            <p>Happy Clients</p>
+          </div>
+          <div class="number">
+            <h3 class="counter">20</h3>
+            <p>Awards</p>
+          </div>
+        </div>
+      </div>
+      <div class="five-content">
+        <div class="inner">
+          <div class="first-content-head">
+            <h2>Latest Projects</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor
+            </p>
+            <p>incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="five-content-foot">
+            <div class="five-content-nav">
+              <a class="all" href="javascript:;">Show all</a>
+              <span>/</span>
+              <a class="a" href="javascript:;">Financical</a>
+              <span>/</span>
+              <a class="b" href="javascript:;">Business</a>
+              <span>/</span>
+              <a class="c" href="javascript:;">Marketing</a>
+              <span>/</span>
+            </div>
+            <div class="five-content-pics">
+              
+                <!--<img src="./IMG/pr1.jpg" alt="" />
+                <img src="./IMG/pr2.jpg" alt="" />
+                <img src="./IMG/pr3.jpg" alt="" />-->
+                <!-- div.pic*3>div.text>h3+p  Tab-->
+                <div class="element-item pic one bb">
+                  <div class="text">
+                    <h3>Designing</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                  </div>
+                </div>
+                <div class="element-item pic two bb">
+                  <div class="text">
+                    <h3>Designing</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                  </div>
+                </div>
+                <div class="element-item pic three aa">
+                  <div class="text">
+                    <h3>Designing</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                  </div>
+                </div>
+              
+              <div class="show-pics"></div>
+                <!--<img src="./IMG/pr4.jpg" alt="" />
+                <img src="./IMG/pr5.jpg" alt="" />
+                <img src="./IMG/pr6.jpg" alt="" />-->
+                <div class="element-item pic four aa">
+                  <div class="text">
+                    <h3>Designing</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                  </div>
+                </div>
+                <div class="element-item pic five cc">
+                  <div class="text">
+                    <h3>Designing</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                  </div>
+                </div>
+                <div class="element-item pic six bb">
+                  <div class="text">
+                    <h3>Designing</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="six-content">
+        <div class="inner">
+          <h2>What our Clients Say</h2>
+          <div class="six-content-foot">
+            <div class="six-foot-content">
+              <img src="./IMG/member1.jpg" alt="" />
+              <div class="user-info">
+                <h3>Web developer</h3>
+                <h3>Martin Harris</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                </p>
+              </div>
+            </div>
+            <div class="six-foot-content">
+              <img src="./IMG/member2.jpg" alt="" />
+              <div class="user-info">
+                <h3>Web developer</h3>
+                <h3>Martin Harris</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="seven-content">
+        <div class="inner">
+          <img src="./IMG/part-1.png" alt="" />
+          <img src="./IMG/part-2.png" alt="" />
+          <img src="./IMG/part-3.png" alt="" />
+          <img src="./IMG/part-4.png" alt="" />
+          <img src="./IMG/part-5.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="foot-top">
+        <div class="inner">
+          <div class="foot-top-one">
+            <img src="./IMG/logo-2.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet, ad per sint graece, vix quod nusquam
+              ea.
+            </p>
+            <ul>
+              <li>E-mail: example@mail.com</li>
+              <li>Phone: +1-23-456789</li>
+              <li>Time: Tus-Mon : 9:00am-6:00pm</li>
+              <li>Map: Sheram 113</li>
+            </ul>
+          </div>
+          <div class="foot-top-two">
+            <h3>RECENT POSTS</h3>
+            <div>
+              <img src="./IMG/footer-post-1.jpg" alt="" />
+              <p>
+                Lorem ipsum dolor sit amet, ad per sint graece, vix quod nusquam
+                ea.
+              </p>
+            </div>
+            <div>
+              <img src="./IMG/footer-post-2.jpg" alt="" />
+              <p>
+                Lorem ipsum dolor sit amet, ad per sint graece, vix quod nusquam
+                ea.
+              </p>
+            </div>
+            <div>
+              <img src="./IMG/footer-post-3.jpg" alt="" />
+              <p>
+                Lorem ipsum dolor sit amet, ad per sint graece, vix quod nusquam
+                ea.
+              </p>
+            </div>
+          </div>
+          <div class="foot-top-three">
+            <h3>LINKS</h3>
+            <!-- a 默认是横向排列 ，   加 br 是强行换行 -->
+            <a href="">HOME</a><br />
+            <a href="">SERVICES</a><br />
+            <a href="">PAGES</a><br />
+            <a href="">BLOG</a><br />
+            <a href="">PORTFOLIO</a>
+          </div>
+          <div class="foot-top-four">
+            <h3>NEWSLETTER</h3>
+            <div>
+              <input placeholder="Your email" type="text" />
+              <a href="">搜索</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div class="inner">
+          <div class="foot-bottom-left">
+            <i class="iconfont icon-facebook"></i>
+            <i class="iconfont icon-twitter"></i>
+            <i class="iconfont icon-pinterest"></i>
+            <i class="iconfont icon-instagram"></i>
+          </div>
+          <p>
+            <span style="font-family: arial">©</span> Copyright 2017 SpecThemes.
+            All Rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script src="./js/jquery.countup.js"></script>
+    <script src="./js/jquery.waypoints.min.js"></script>
+    <script src="./js/isotope.pkgd.min.js"></script>
+    <script src="./js/swiper.animate1.0.3.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script>
+      $(".counter").countUp();
+
+      $(".five-content-pics").isotope({ filter: "*" });
+
+//当你点击某个导航 对应导航变绿 其他变灰//
+      $(".all").click(function () {
+        $(".five-content-pics").isotope({ filter: "*" });
+        $(".all").css("color","#18ba60" ).siblings("a").css("color","#bcbbbb");
+      });
+
+        $(".a").click(function () {
+         $(".five-content-pics").isotope({ filter: ".aa" });
+         $(".a").css("color","#18ba60" ).siblings("a").css("color","#bcbbbb");
+      });
+
+        $(".b").click(function () {
+         $(".five-content-pics").isotope({ filter: ".bb" });
+         $(".b").css("color","#18ba60" ).siblings("a").css("color","#bcbbbb");
+      });
+
+        $(".c").click(function () {
+         $(".five-content-pics").isotope({ filter: ".cc" });
+         $(".c").css("color","#18ba60" ).siblings("a").css("color","#bcbbbb");
+      });
+
+       var mySwiper = new Swiper ('.swiper-container', {
+   
+    loop: true, // 循环模式选项
+    
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+      type:"progressbar"
+    },
+    
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }, 
+   on:{
+      init: function(){
+        swiperAnimateCache(this); //隐藏动画元素 
+        swiperAnimate(this); //初始化完成开始动画
+      }, 
+      slideChangeTransitionEnd: function(){ 
+        swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+        //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+      } 
+    }
+  }) ;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+Ctrl+enter在当前行的下一行另起一行
+Shift+Ctrl+enter在当前行的上一行另起一行
+Control＋D 选择重复内容
+Alt多光标
+Ctrl＋shift+箭头 移动当前行
+Ctrl+z 撤销
+Ctrl+y反撤销
+Alt+F3全选or Ctrl+D不撒手
+Ctrl+H全局搜索
